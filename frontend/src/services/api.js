@@ -13,14 +13,14 @@ export const checkBackendHealth = async () => {
     }
 };
 
-export const searchProducts = async (query) => {
+export const searchProducts = async (query, filters = {}) => {
     try {
         const response = await fetch(`${API_URL}/search`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ query }),
+            body: JSON.stringify({ query, filters }),
         });
 
         if (!response.ok) {

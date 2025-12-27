@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { checkBackendHealth, searchProducts } from '../services/api';
 import SearchBar from '../components/SearchBar';
+import Filters from '../components/Filters';
 
 export default function Home() {
     const [status, setStatus] = useState('loading'); // loading, healthy, error
@@ -9,6 +10,14 @@ export default function Home() {
         loading: false,
         error: null,
         hasSearched: false
+    });
+
+    // Filter State
+    const [filters, setFilters] = useState({
+        category: '',
+        price_min: '',
+        price_max: '',
+        rating: ''
     });
 
     useEffect(() => {
@@ -24,11 +33,22 @@ export default function Home() {
         checkHealth();
     }, []);
 
-    const handleSearch = async (query) => {
-        setSearchState({ query, loading: true, error: null, hasSearched: true });
+    const handleSearch = async (queryInput) => {
+        // Query might come from SearchBar (string) or use existing state
+        const queryToUse = typeof queryInput === 'string' ? queryInput : searchState.query;
+
+        if (!queryToUse.trim()) return;
+
+        setSearchState(prev => ({
+            ...prev,
+            query: queryToUse,
+            loading: true,
+            error: null,
+            hasSearched: true
+        }));
 
         try {
-            await searchProducts(query);
+            await searchProducts(queryToUse, filters);
             setSearchState(prev => ({ ...prev, loading: false }));
         } catch (error) {
             setSearchState(prev => ({
@@ -53,6 +73,8 @@ export default function Home() {
 
                 <div className="mb-12 animate-fade-in" style={{ animationDelay: '0.1s' }}>
                     <SearchBar onSearch={handleSearch} isLoading={searchState.loading} />
+
+                    <Filters filters={filters} onChange={setFilters} />
 
                     {searchState.error && (
                         <div className="mt-4 text-center text-red-600 bg-red-50 py-2 px-4 rounded-lg inline-block w-full max-w-3xl mx-auto">
