@@ -129,6 +129,12 @@ class SearchService:
                 similarity_score=round(similarity, 4)
             ))
             
+        # 5. Apply Learning-to-Rank (Re-ranking)
+        if results:
+            from app.services.ranking_service import get_ranking_service
+            ranking_service = get_ranking_service()
+            results = ranking_service.apply_ranking(results)
+            
         logger.info(f"Search returned {len(results)} results")
         return results
 
