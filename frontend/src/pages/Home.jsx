@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { checkBackendHealth, searchProducts } from '../services/api';
 import SearchBar from '../components/SearchBar';
 import Filters from '../components/Filters';
+import ResultsGrid from '../components/ResultsGrid';
 
 export default function Home() {
     const [status, setStatus] = useState('loading'); // loading, healthy, error
@@ -9,7 +10,8 @@ export default function Home() {
         query: '',
         loading: false,
         error: null,
-        hasSearched: false
+        hasSearched: false,
+        results: []
     });
 
     // Filter State
@@ -44,12 +46,19 @@ export default function Home() {
             query: queryToUse,
             loading: true,
             error: null,
-            hasSearched: true
+            hasSearched: true,
+            results: []
         }));
 
         try {
-            await searchProducts(queryToUse, filters);
-            setSearchState(prev => ({ ...prev, loading: false }));
+            const data = await searchProducts(queryToUse, filters);
+            const results = Array.isArray(data) ? data : (data.results || []);
+
+            setSearchState(prev => ({
+                ...prev,
+                loading: false,
+                results: results
+            }));
         } catch (error) {
             setSearchState(prev => ({
                 ...prev,
@@ -84,7 +93,20 @@ export default function Home() {
 
                     {searchState.loading && (
                         <div className="mt-8 text-center text-slate-500">
-                            Processing your query...
+                            Searching relevant products...
+                        </div>
+                    )}
+
+                    {!searchState.loading && searchState.hasSearched && (
+                        <div className="mt-12">
+                            {searchState.results.length > 0 ? (
+                                <ResultsGrid results={searchState.results} />
+                            ) : (
+                                <div className="text-center text-slate-500 py-12 bg-white rounded-xl border border-slate-100">
+                                    <p className="text-lg">No products found matching your underlying specific criteria.</p>
+                                    <p className="text-sm mt-2">Try adjusting your filters or search query.</p>
+                                </div>
+                            )}
                         </div>
                     )}
                 </div>
