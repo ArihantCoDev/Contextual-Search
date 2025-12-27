@@ -31,6 +31,7 @@ class SearchResult(BaseModel):
     similarity_score: float
     description: Optional[str] = None
     category: Optional[str] = None
+    explanation: Optional[str] = None
 
 
 class SearchService:
@@ -134,6 +135,12 @@ class SearchService:
             from app.services.ranking_service import get_ranking_service
             ranking_service = get_ranking_service()
             results = ranking_service.apply_ranking(results)
+            
+            # 6. AI Explanation (Enrichment)
+            # We apply this after ranking so we only explain top results
+            from app.services.explanation_orchestrator import get_explanation_orchestrator
+            orchestrator = get_explanation_orchestrator()
+            results = orchestrator.enrich_results(results, query)
             
         logger.info(f"Search returned {len(results)} results")
         return results
