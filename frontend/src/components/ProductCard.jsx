@@ -1,4 +1,8 @@
+import { useState } from 'react';
+
 export default function ProductCard({ product }) {
+    const [isExpanded, setIsExpanded] = useState(false);
+
     // Defensive checks for missing data
     const {
         title: name = 'Unnamed Product', // Map title to name for internal use
@@ -6,7 +10,8 @@ export default function ProductCard({ product }) {
         brand = 'Generic',
         price = 0,
         rating = 0,
-        image_url
+        image_url,
+        explanation // AI Explanation field
     } = product || {};
 
     return (
@@ -53,6 +58,35 @@ export default function ProductCard({ product }) {
                         {rating}
                     </div>
                 </div>
+
+                {/* AI Explanation Toggle */}
+                {explanation && (
+                    <div className="mt-4 border-t border-slate-100 pt-3">
+                        <button
+                            onClick={() => setIsExpanded(!isExpanded)}
+                            className="flex items-center text-xs font-medium text-violet-600 hover:text-violet-700 transition-colors focus:outline-none"
+                        >
+                            <svg
+                                className={`w-4 h-4 mr-1 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                            {isExpanded ? 'Hide AI Insight' : 'Why this match?'}
+                        </button>
+
+                        <div
+                            className={`overflow-hidden transition-all duration-300 ease-in-out ${isExpanded ? 'max-h-40 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}
+                        >
+                            <div className="bg-violet-50 p-3 rounded-lg text-xs text-slate-700 leading-relaxed border border-violet-100">
+                                <span className="font-semibold text-violet-700 block mb-1">AI Insight:</span>
+                                {explanation}
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     );

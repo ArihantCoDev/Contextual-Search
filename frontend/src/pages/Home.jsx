@@ -51,7 +51,14 @@ export default function Home() {
         }));
 
         try {
-            const data = await searchProducts(queryToUse, filters);
+            // Map frontend filter keys to API expected keys
+            const apiFilters = {
+                category: filters.category,
+                max_price: filters.price_max ? parseFloat(filters.price_max) : null,
+                min_rating: filters.rating ? parseFloat(filters.rating) : null
+            };
+
+            const data = await searchProducts(queryToUse, apiFilters);
             const results = Array.isArray(data) ? data : (data.results || []);
 
             setSearchState(prev => ({
