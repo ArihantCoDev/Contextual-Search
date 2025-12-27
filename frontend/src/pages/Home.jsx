@@ -1,8 +1,15 @@
 import { useState, useEffect } from 'react';
-import { checkBackendHealth } from '../services/api';
+import { checkBackendHealth, searchProducts } from '../services/api';
+import SearchBar from '../components/SearchBar';
 
 export default function Home() {
     const [status, setStatus] = useState('loading'); // loading, healthy, error
+    const [searchState, setSearchState] = useState({
+        query: '',
+        loading: false,
+        error: null,
+        hasSearched: false
+    });
 
     useEffect(() => {
         const checkHealth = async () => {
@@ -17,19 +24,52 @@ export default function Home() {
         checkHealth();
     }, []);
 
+    const handleSearch = async (query) => {
+        setSearchState({ query, loading: true, error: null, hasSearched: true });
+
+        try {
+            await searchProducts(query);
+            setSearchState(prev => ({ ...prev, loading: false }));
+        } catch (error) {
+            setSearchState(prev => ({
+                ...prev,
+                loading: false,
+                error: 'Failed to complete search. Please check backend connection.'
+            }));
+        }
+    };
+
     return (
         <div className="min-h-screen pt-16 bg-slate-50">
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 animate-fade-in">
-                    <h1 className="text-3xl font-bold text-slate-900 mb-4">
-                        Welcome to Contextual Search
+                <div className="text-center mb-12 animate-fade-in">
+                    <h1 className="text-4xl font-bold text-slate-900 mb-4">
+                        Contextual Product Search
                     </h1>
-                    <p className="text-lg text-slate-600 mb-8 max-w-2xl">
-                        Experience the next generation of product search. Connect to our intelligent backend to explore semantically relevant results.
+                    <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                        Find exactly what you're looking for using natural language.
                     </p>
+                </div>
 
-                    <div className="flex items-center space-x-3 p-4 bg-slate-50 rounded-lg border border-slate-200 w-fit">
-                        <span className="text-sm font-medium text-slate-700">Backend Status:</span>
+                <div className="mb-12 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+                    <SearchBar onSearch={handleSearch} isLoading={searchState.loading} />
+
+                    {searchState.error && (
+                        <div className="mt-4 text-center text-red-600 bg-red-50 py-2 px-4 rounded-lg inline-block w-full max-w-3xl mx-auto">
+                            {searchState.error}
+                        </div>
+                    )}
+
+                    {searchState.loading && (
+                        <div className="mt-8 text-center text-slate-500">
+                            Processing your query...
+                        </div>
+                    )}
+                </div>
+
+                <div className="flex justify-center animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                    <div className="flex items-center space-x-3 p-4 bg-white rounded-lg border border-slate-100 shadow-sm">
+                        <span className="text-sm font-medium text-slate-700">System Status:</span>
                         {status === 'loading' && (
                             <span className="flex items-center text-yellow-600 text-sm font-medium">
                                 <span className="w-2 h-2 bg-yellow-500 rounded-full mr-2 animate-pulse"></span>

@@ -3,7 +3,7 @@
 @layer base {
   html {
     font-family: 'Inter', system-ui, sans-serif;
-    @apply bg-background text-slate-900 antialiased;
+    @apply bg-slate-50 text-slate-900 antialiased;
   }
 }
 

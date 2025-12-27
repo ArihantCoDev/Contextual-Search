@@ -51,6 +51,12 @@ async def root():
     }
 
 
+@app.get("/health")
+async def health_check():
+    """Health check endpoint."""
+    return {"status": "healthy", "service": "contextual-search-api"}
+
+
 @app.on_event("startup")
 async def startup_event():
     """Application startup event handler."""
