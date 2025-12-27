@@ -5,6 +5,7 @@ from fastapi import FastAPI
 
 from app.api.routes import router
 from app.api.ingestion_routes import router as ingestion_router
+from app.api.search_routes import router as search_router
 from app.utils.logger import logger
 
 # Create FastAPI application
@@ -17,6 +18,7 @@ app = FastAPI(
 # Include API routes
 app.include_router(router, prefix="/api", tags=["api"])
 app.include_router(ingestion_router, prefix="/ingest", tags=["ingestion"])
+app.include_router(search_router, prefix="/api", tags=["search"])
 
 
 @app.get("/")
