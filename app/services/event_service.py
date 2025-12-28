@@ -17,9 +17,15 @@ class EventService:
     def __init__(self):
         """Initialize event service with repository and queue."""
         self.repository = get_event_repository()
+        # ARCHITECTURE NOTE: Async queue prevents event processing from blocking search API
+        # - Events are added to queue without waiting
+        # - Background worker processes events asynchronously
+        # - If queue fills, events are dropped (logged) rather than blocking search
         self.queue = asyncio.Queue()
         self.is_running = False
         self.worker_task = None
+        # Metrics: Track total events processed (in-memory counter)
+        self.total_events_processed = 0
         
     async def start_worker(self):
         """Start the background event processing worker."""
@@ -62,11 +68,14 @@ class EventService:
             "session_id": session_id,
             "payload": payload
         }
+        # Log event ingestion
+        logger.info(f"Event ingested: type={event_type}, session={session_id}")
+        
         # Put into queue without blocking
         try:
             self.queue.put_nowait(event_data)
         except asyncio.QueueFull:
-            logger.error("Event queue is full, dropping event")
+            logger.error(f"Event queue is full, dropping event: type={event_type}, session={session_id}")
             
     async def _worker(self):
         """Background loop to process events from the queue."""
@@ -101,8 +110,12 @@ class EventService:
                 session_id=event_data["session_id"],
                 payload=event_data["payload"]
             )
+            # Increment counter and log metrics periodically
+            self.total_events_processed += 1
+            if self.total_events_processed % 100 == 0:  # Log every 100 events
+                logger.info(f"Total events processed: {self.total_events_processed}")
         except Exception as e:
-            logger.error(f"Failed to save event: {e}")
+            logger.error(f"Failed to save event type={event_data.get('event_type')}: {e}")
 
 
 # Singleton instance

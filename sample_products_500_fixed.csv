@@ -1,0 +1,501 @@
+id,title,description,category,brand,color,size,material,price,rating
+1,Running Shoes Model 1,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,Green,8,Synthetic,5219,3.9
+2,Wireless Headphones Model 2,Noise cancelling wireless headphones with long battery life.,Electronics,Apple,Blue,Standard,Leather,12765,3.9
+3,Running Shoes Model 3,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Dell,Gray,11,Glass,5172,4.1
+4,Running Shoes Model 4,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Nike,Black,10,Mesh,3998,4.3
+5,Running Shoes Model 5,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Puma,Black,7,Mesh,3519,4.6
+6,Wireless Headphones Model 6,Noise cancelling wireless headphones with long battery life.,Electronics,Sony,Black,Standard,Aluminum,10189,4.5
+7,Laptop Model 7,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,HP,White,15.6 inch,Plastic,119403,3.6
+8,Laptop Model 8,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Apple,Blue,15.6 inch,Mesh,92605,3.7
+9,Laptop Model 9,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,ASUS,Black,13 inch,Plastic,60861,4.4
+10,Wireless Headphones Model 10,Noise cancelling wireless headphones with long battery life.,Electronics,Dell,Blue,Standard,Glass,4275,3.9
+11,Laptop Model 11,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Adidas,Green,14 inch,Glass,42569,3.8
+12,Wireless Headphones Model 12,Noise cancelling wireless headphones with long battery life.,Electronics,Nike,Black,Standard,Synthetic,5256,4.7
+13,Laptop Model 13,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Puma,Black,15.6 inch,Aluminum,83277,3.8
+14,Wireless Headphones Model 14,Noise cancelling wireless headphones with long battery life.,Electronics,Samsung,Black,Standard,Mesh,10990,3.8
+15,Laptop Model 15,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Apple,Red,15.6 inch,Glass,96033,3.8
+16,Wireless Headphones Model 16,Noise cancelling wireless headphones with long battery life.,Electronics,HP,Black,Standard,Glass,9433,4.2
+17,Laptop Model 17,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Nike,Red,14 inch,Leather,98174,4.2
+18,Laptop Model 18,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,ASUS,Gray,14 inch,Synthetic,84758,4.1
+19,Running Shoes Model 19,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Apple,White,7,Mesh,5973,4.9
+20,Running Shoes Model 20,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Apple,Blue,6,Plastic,5479,5.0
+21,Wireless Headphones Model 21,Noise cancelling wireless headphones with long battery life.,Electronics,HP,Red,Standard,Glass,9860,4.9
+22,Laptop Model 22,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,HP,Green,14 inch,Leather,91129,4.3
+23,Running Shoes Model 23,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Sony,Blue,11,Leather,3431,4.8
+24,Running Shoes Model 24,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Samsung,White,7,Plastic,7675,4.7
+25,Running Shoes Model 25,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Boat,Black,7,Plastic,2848,4.4
+26,Laptop Model 26,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Nike,Red,15.6 inch,Synthetic,61397,4.0
+27,Laptop Model 27,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Adidas,White,15.6 inch,Synthetic,112065,4.5
+28,Laptop Model 28,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Apple,Green,14 inch,Aluminum,103512,4.1
+29,Running Shoes Model 29,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Boat,Black,11,Glass,5496,4.2
+30,Running Shoes Model 30,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,ASUS,Gray,7,Leather,7109,4.1
+31,Running Shoes Model 31,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Puma,Black,7,Plastic,7731,4.5
+32,Laptop Model 32,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,ASUS,Gray,14 inch,Plastic,81284,3.6
+33,Laptop Model 33,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Puma,Black,15.6 inch,Plastic,47957,3.5
+34,Running Shoes Model 34,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,Green,8,Glass,6902,4.6
+35,Laptop Model 35,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,HP,Black,14 inch,Leather,77977,3.7
+36,Wireless Headphones Model 36,Noise cancelling wireless headphones with long battery life.,Electronics,Dell,Gray,Standard,Synthetic,13390,3.6
+37,Laptop Model 37,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Puma,Red,13 inch,Leather,115441,4.8
+38,Wireless Headphones Model 38,Noise cancelling wireless headphones with long battery life.,Electronics,Puma,Black,Standard,Glass,6075,3.9
+39,Wireless Headphones Model 39,Noise cancelling wireless headphones with long battery life.,Electronics,Boat,Red,Standard,Glass,9509,4.6
+40,Running Shoes Model 40,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,Red,6,Aluminum,3233,4.0
+41,Laptop Model 41,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Dell,Gray,13 inch,Glass,83484,4.7
+42,Laptop Model 42,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Sony,White,14 inch,Synthetic,37170,4.5
+43,Running Shoes Model 43,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Dell,Gray,8,Glass,4390,4.1
+44,Laptop Model 44,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Puma,Black,13 inch,Aluminum,71802,3.8
+45,Running Shoes Model 45,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Boat,Black,6,Mesh,7603,3.9
+46,Wireless Headphones Model 46,Noise cancelling wireless headphones with long battery life.,Electronics,Boat,Black,Standard,Glass,9626,4.5
+47,Running Shoes Model 47,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Dell,White,11,Synthetic,7869,4.1
+48,Laptop Model 48,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,ASUS,Blue,14 inch,Aluminum,67639,4.4
+49,Running Shoes Model 49,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Boat,Red,10,Aluminum,6995,3.9
+50,Wireless Headphones Model 50,Noise cancelling wireless headphones with long battery life.,Electronics,ASUS,Gray,Standard,Aluminum,10346,5.0
+51,Wireless Headphones Model 51,Noise cancelling wireless headphones with long battery life.,Electronics,Boat,White,Standard,Aluminum,5787,4.4
+52,Running Shoes Model 52,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Boat,Black,8,Aluminum,3163,4.5
+53,Laptop Model 53,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,HP,White,13 inch,Glass,86830,3.6
+54,Laptop Model 54,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Dell,Gray,13 inch,Plastic,83652,3.6
+55,Wireless Headphones Model 55,Noise cancelling wireless headphones with long battery life.,Electronics,Apple,Blue,Standard,Synthetic,10478,3.5
+56,Laptop Model 56,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Puma,Red,15.6 inch,Plastic,49516,4.7
+57,Laptop Model 57,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Adidas,Black,13 inch,Leather,65664,4.7
+58,Laptop Model 58,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Dell,White,15.6 inch,Glass,86099,3.9
+59,Laptop Model 59,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,ASUS,Green,15.6 inch,Leather,34877,4.2
+60,Laptop Model 60,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Nike,Red,14 inch,Plastic,76371,3.6
+61,Wireless Headphones Model 61,Noise cancelling wireless headphones with long battery life.,Electronics,Puma,White,Standard,Synthetic,13614,4.3
+62,Running Shoes Model 62,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,White,8,Aluminum,5213,4.4
+63,Laptop Model 63,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Puma,Black,15.6 inch,Glass,43673,4.8
+64,Laptop Model 64,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Samsung,White,13 inch,Glass,107787,4.0
+65,Laptop Model 65,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Puma,Blue,14 inch,Synthetic,87524,4.7
+66,Running Shoes Model 66,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Apple,Red,7,Leather,7326,4.7
+67,Laptop Model 67,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Apple,Green,14 inch,Glass,47744,3.7
+68,Laptop Model 68,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Apple,Red,14 inch,Synthetic,43550,4.1
+69,Wireless Headphones Model 69,Noise cancelling wireless headphones with long battery life.,Electronics,Apple,Black,Standard,Aluminum,3876,4.1
+70,Wireless Headphones Model 70,Noise cancelling wireless headphones with long battery life.,Electronics,Samsung,Red,Standard,Plastic,14953,4.7
+71,Wireless Headphones Model 71,Noise cancelling wireless headphones with long battery life.,Electronics,Dell,Black,Standard,Plastic,9452,4.8
+72,Laptop Model 72,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Nike,Black,13 inch,Plastic,119914,3.8
+73,Wireless Headphones Model 73,Noise cancelling wireless headphones with long battery life.,Electronics,Boat,Blue,Standard,Glass,10035,3.7
+74,Laptop Model 74,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Samsung,Gray,14 inch,Plastic,99074,3.6
+75,Wireless Headphones Model 75,Noise cancelling wireless headphones with long battery life.,Electronics,ASUS,Blue,Standard,Glass,10792,5.0
+76,Running Shoes Model 76,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Apple,Black,7,Mesh,3791,4.0
+77,Running Shoes Model 77,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Samsung,Green,9,Mesh,5519,4.0
+78,Wireless Headphones Model 78,Noise cancelling wireless headphones with long battery life.,Electronics,HP,Black,Standard,Mesh,11598,4.7
+79,Running Shoes Model 79,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,ASUS,White,10,Aluminum,7552,4.2
+80,Laptop Model 80,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Samsung,Gray,13 inch,Mesh,119942,3.7
+81,Wireless Headphones Model 81,Noise cancelling wireless headphones with long battery life.,Electronics,Sony,Blue,Standard,Synthetic,11213,4.8
+82,Running Shoes Model 82,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Apple,Red,11,Mesh,5724,4.8
+83,Laptop Model 83,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Nike,Black,14 inch,Synthetic,101609,4.3
+84,Laptop Model 84,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Sony,White,13 inch,Leather,57003,4.3
+85,Running Shoes Model 85,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Apple,Red,9,Glass,7939,4.1
+86,Running Shoes Model 86,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Dell,Blue,11,Plastic,4615,3.5
+87,Running Shoes Model 87,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Puma,Black,7,Mesh,7855,4.7
+88,Laptop Model 88,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,ASUS,Red,15.6 inch,Mesh,65254,4.2
+89,Running Shoes Model 89,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Sony,Black,10,Leather,6357,4.8
+90,Laptop Model 90,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Dell,Blue,13 inch,Aluminum,53655,3.6
+91,Laptop Model 91,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Adidas,Black,13 inch,Plastic,113509,4.3
+92,Running Shoes Model 92,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,ASUS,Blue,7,Synthetic,5527,4.3
+93,Running Shoes Model 93,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,Blue,9,Aluminum,7090,3.7
+94,Laptop Model 94,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,HP,Red,13 inch,Mesh,63205,4.5
+95,Wireless Headphones Model 95,Noise cancelling wireless headphones with long battery life.,Electronics,Dell,Gray,Standard,Aluminum,7485,3.7
+96,Laptop Model 96,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Sony,Gray,15.6 inch,Leather,56196,4.1
+97,Running Shoes Model 97,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Sony,Green,8,Glass,2788,4.0
+98,Running Shoes Model 98,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,ASUS,Gray,6,Leather,6907,3.8
+99,Running Shoes Model 99,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Sony,Black,6,Leather,4334,4.9
+100,Running Shoes Model 100,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,Red,10,Synthetic,3264,3.6
+101,Laptop Model 101,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Sony,Blue,15.6 inch,Mesh,76382,4.7
+102,Laptop Model 102,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Sony,Green,14 inch,Plastic,55350,4.1
+103,Wireless Headphones Model 103,Noise cancelling wireless headphones with long battery life.,Electronics,Adidas,Green,Standard,Aluminum,3812,4.0
+104,Wireless Headphones Model 104,Noise cancelling wireless headphones with long battery life.,Electronics,Samsung,Black,Standard,Leather,9669,4.0
+105,Laptop Model 105,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Apple,Green,15.6 inch,Mesh,62053,4.3
+106,Wireless Headphones Model 106,Noise cancelling wireless headphones with long battery life.,Electronics,Nike,White,Standard,Plastic,6989,5.0
+107,Laptop Model 107,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Dell,White,14 inch,Mesh,67746,4.8
+108,Running Shoes Model 108,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,ASUS,Green,7,Leather,3915,4.1
+109,Laptop Model 109,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Boat,Gray,14 inch,Glass,38394,4.2
+110,Laptop Model 110,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,HP,Red,13 inch,Leather,103300,3.6
+111,Running Shoes Model 111,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Sony,Green,10,Plastic,3548,4.0
+112,Running Shoes Model 112,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Puma,Black,8,Glass,7257,3.9
+113,Running Shoes Model 113,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Dell,Red,10,Mesh,6107,3.8
+114,Laptop Model 114,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Apple,Red,13 inch,Glass,33060,4.2
+115,Wireless Headphones Model 115,Noise cancelling wireless headphones with long battery life.,Electronics,Nike,White,Standard,Mesh,3343,4.7
+116,Laptop Model 116,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Puma,Black,14 inch,Leather,50994,4.9
+117,Wireless Headphones Model 117,Noise cancelling wireless headphones with long battery life.,Electronics,Nike,Gray,Standard,Synthetic,14293,4.6
+118,Wireless Headphones Model 118,Noise cancelling wireless headphones with long battery life.,Electronics,HP,Green,Standard,Synthetic,5866,4.8
+119,Wireless Headphones Model 119,Noise cancelling wireless headphones with long battery life.,Electronics,Dell,White,Standard,Plastic,12005,4.5
+120,Laptop Model 120,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Dell,Black,14 inch,Plastic,54574,4.0
+121,Wireless Headphones Model 121,Noise cancelling wireless headphones with long battery life.,Electronics,Dell,Black,Standard,Aluminum,10962,4.4
+122,Wireless Headphones Model 122,Noise cancelling wireless headphones with long battery life.,Electronics,Nike,Blue,Standard,Synthetic,8291,4.5
+123,Wireless Headphones Model 123,Noise cancelling wireless headphones with long battery life.,Electronics,Adidas,Green,Standard,Aluminum,5218,4.1
+124,Running Shoes Model 124,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Boat,Green,11,Aluminum,4660,4.2
+125,Wireless Headphones Model 125,Noise cancelling wireless headphones with long battery life.,Electronics,Puma,Gray,Standard,Plastic,12765,4.3
+126,Running Shoes Model 126,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,ASUS,Green,9,Leather,6286,3.9
+127,Running Shoes Model 127,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,Blue,9,Plastic,3727,4.7
+128,Laptop Model 128,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Apple,Blue,14 inch,Mesh,79478,4.5
+129,Laptop Model 129,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Adidas,Green,15.6 inch,Aluminum,74810,4.7
+130,Wireless Headphones Model 130,Noise cancelling wireless headphones with long battery life.,Electronics,Boat,Red,Standard,Aluminum,12733,4.8
+131,Laptop Model 131,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,ASUS,Black,14 inch,Leather,35659,4.0
+132,Running Shoes Model 132,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Puma,Green,9,Plastic,4630,4.0
+133,Laptop Model 133,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Apple,Black,15.6 inch,Leather,110964,3.9
+134,Laptop Model 134,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Adidas,Blue,13 inch,Plastic,109285,3.8
+135,Running Shoes Model 135,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Boat,Red,9,Synthetic,2523,4.2
+136,Running Shoes Model 136,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,Black,10,Mesh,6497,4.5
+137,Laptop Model 137,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Samsung,Red,13 inch,Plastic,32362,3.8
+138,Laptop Model 138,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Apple,Gray,13 inch,Glass,85696,3.7
+139,Laptop Model 139,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Samsung,White,13 inch,Leather,90092,4.4
+140,Wireless Headphones Model 140,Noise cancelling wireless headphones with long battery life.,Electronics,ASUS,Green,Standard,Synthetic,12194,4.6
+141,Laptop Model 141,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Nike,Red,14 inch,Leather,46369,3.8
+142,Wireless Headphones Model 142,Noise cancelling wireless headphones with long battery life.,Electronics,Nike,Green,Standard,Plastic,5158,3.9
+143,Laptop Model 143,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Adidas,Blue,13 inch,Synthetic,66335,3.9
+144,Laptop Model 144,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Apple,Black,14 inch,Leather,91862,4.2
+145,Wireless Headphones Model 145,Noise cancelling wireless headphones with long battery life.,Electronics,ASUS,Blue,Standard,Leather,6127,3.9
+146,Wireless Headphones Model 146,Noise cancelling wireless headphones with long battery life.,Electronics,HP,White,Standard,Mesh,5219,3.7
+147,Laptop Model 147,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Dell,Blue,13 inch,Aluminum,90765,3.8
+148,Running Shoes Model 148,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,ASUS,Green,6,Plastic,3346,4.6
+149,Wireless Headphones Model 149,Noise cancelling wireless headphones with long battery life.,Electronics,Puma,Black,Standard,Synthetic,4560,4.5
+150,Running Shoes Model 150,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,Green,9,Plastic,4206,4.0
+151,Wireless Headphones Model 151,Noise cancelling wireless headphones with long battery life.,Electronics,Boat,Red,Standard,Plastic,2098,4.6
+152,Laptop Model 152,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,HP,Blue,14 inch,Glass,41081,4.9
+153,Running Shoes Model 153,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,Red,7,Aluminum,4546,4.4
+154,Running Shoes Model 154,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,Green,7,Plastic,7639,5.0
+155,Wireless Headphones Model 155,Noise cancelling wireless headphones with long battery life.,Electronics,HP,White,Standard,Leather,12409,3.5
+156,Laptop Model 156,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Dell,Black,15.6 inch,Aluminum,43536,4.1
+157,Running Shoes Model 157,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,ASUS,Green,7,Synthetic,6455,4.3
+158,Wireless Headphones Model 158,Noise cancelling wireless headphones with long battery life.,Electronics,HP,Gray,Standard,Aluminum,10104,3.5
+159,Laptop Model 159,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Sony,Green,15.6 inch,Synthetic,66006,3.9
+160,Laptop Model 160,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Puma,White,13 inch,Mesh,105053,4.2
+161,Wireless Headphones Model 161,Noise cancelling wireless headphones with long battery life.,Electronics,HP,Gray,Standard,Synthetic,5061,4.0
+162,Running Shoes Model 162,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Boat,Black,11,Synthetic,4602,4.3
+163,Wireless Headphones Model 163,Noise cancelling wireless headphones with long battery life.,Electronics,ASUS,Black,Standard,Mesh,14774,3.7
+164,Running Shoes Model 164,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Apple,Green,11,Aluminum,6995,4.2
+165,Laptop Model 165,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Samsung,White,15.6 inch,Glass,113689,4.0
+166,Laptop Model 166,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Sony,Black,15.6 inch,Synthetic,73209,3.5
+167,Running Shoes Model 167,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Apple,Red,11,Plastic,3711,3.7
+168,Wireless Headphones Model 168,Noise cancelling wireless headphones with long battery life.,Electronics,ASUS,Red,Standard,Leather,8601,4.8
+169,Laptop Model 169,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Apple,Black,14 inch,Mesh,85576,4.1
+170,Laptop Model 170,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Sony,Blue,15.6 inch,Glass,103070,4.8
+171,Laptop Model 171,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,HP,Blue,15.6 inch,Synthetic,62452,3.6
+172,Wireless Headphones Model 172,Noise cancelling wireless headphones with long battery life.,Electronics,Samsung,Black,Standard,Leather,7445,4.5
+173,Wireless Headphones Model 173,Noise cancelling wireless headphones with long battery life.,Electronics,Dell,Blue,Standard,Glass,12401,4.3
+174,Laptop Model 174,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,ASUS,Green,13 inch,Synthetic,102261,4.1
+175,Running Shoes Model 175,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Puma,Green,10,Leather,5399,4.4
+176,Wireless Headphones Model 176,Noise cancelling wireless headphones with long battery life.,Electronics,Boat,Green,Standard,Plastic,10285,4.2
+177,Laptop Model 177,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Puma,Black,13 inch,Aluminum,43804,4.5
+178,Laptop Model 178,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Boat,Red,15.6 inch,Synthetic,60042,3.8
+179,Running Shoes Model 179,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,Black,11,Leather,2813,4.7
+180,Laptop Model 180,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,HP,Green,14 inch,Leather,33327,4.7
+181,Laptop Model 181,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Boat,Gray,15.6 inch,Glass,51606,5.0
+182,Laptop Model 182,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Samsung,Green,13 inch,Leather,67653,4.2
+183,Wireless Headphones Model 183,Noise cancelling wireless headphones with long battery life.,Electronics,Puma,Black,Standard,Plastic,2906,3.5
+184,Laptop Model 184,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Boat,White,13 inch,Synthetic,30493,4.0
+185,Laptop Model 185,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Puma,Blue,13 inch,Mesh,98734,3.8
+186,Wireless Headphones Model 186,Noise cancelling wireless headphones with long battery life.,Electronics,Dell,Blue,Standard,Aluminum,12475,4.9
+187,Wireless Headphones Model 187,Noise cancelling wireless headphones with long battery life.,Electronics,Sony,Black,Standard,Mesh,11026,3.6
+188,Running Shoes Model 188,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Boat,Green,7,Aluminum,2741,3.6
+189,Laptop Model 189,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,HP,Black,15.6 inch,Leather,57341,4.4
+190,Wireless Headphones Model 190,Noise cancelling wireless headphones with long battery life.,Electronics,Puma,Blue,Standard,Glass,9816,4.7
+191,Wireless Headphones Model 191,Noise cancelling wireless headphones with long battery life.,Electronics,Samsung,Green,Standard,Mesh,13927,4.1
+192,Wireless Headphones Model 192,Noise cancelling wireless headphones with long battery life.,Electronics,Samsung,Red,Standard,Leather,2014,3.8
+193,Running Shoes Model 193,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Samsung,Green,8,Plastic,5279,4.9
+194,Laptop Model 194,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Sony,Black,13 inch,Mesh,57375,4.5
+195,Running Shoes Model 195,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Nike,Green,6,Plastic,4432,4.1
+196,Wireless Headphones Model 196,Noise cancelling wireless headphones with long battery life.,Electronics,Apple,Green,Standard,Glass,3494,4.2
+197,Wireless Headphones Model 197,Noise cancelling wireless headphones with long battery life.,Electronics,Dell,Gray,Standard,Plastic,7313,3.8
+198,Running Shoes Model 198,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Apple,White,7,Synthetic,7423,4.7
+199,Wireless Headphones Model 199,Noise cancelling wireless headphones with long battery life.,Electronics,Nike,Gray,Standard,Leather,4628,5.0
+200,Running Shoes Model 200,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Apple,Gray,7,Leather,7837,4.7
+201,Running Shoes Model 201,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Dell,Black,7,Synthetic,5445,4.6
+202,Wireless Headphones Model 202,Noise cancelling wireless headphones with long battery life.,Electronics,Samsung,Black,Standard,Aluminum,8375,4.4
+203,Running Shoes Model 203,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Samsung,Gray,8,Leather,7632,4.2
+204,Running Shoes Model 204,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Samsung,Blue,7,Aluminum,2509,4.6
+205,Laptop Model 205,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Nike,Blue,15.6 inch,Plastic,65468,4.8
+206,Laptop Model 206,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Apple,Gray,15.6 inch,Mesh,76178,3.9
+207,Running Shoes Model 207,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,HP,Black,8,Leather,6615,3.9
+208,Wireless Headphones Model 208,Noise cancelling wireless headphones with long battery life.,Electronics,Adidas,Red,Standard,Mesh,8429,3.9
+209,Laptop Model 209,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Dell,Black,15.6 inch,Synthetic,115121,4.1
+210,Running Shoes Model 210,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Nike,Blue,9,Aluminum,6076,4.1
+211,Running Shoes Model 211,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Nike,Gray,11,Glass,5862,4.6
+212,Running Shoes Model 212,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,ASUS,Blue,9,Leather,5994,4.8
+213,Laptop Model 213,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,ASUS,Gray,13 inch,Mesh,105635,3.6
+214,Laptop Model 214,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Sony,Green,14 inch,Plastic,81726,3.9
+215,Wireless Headphones Model 215,Noise cancelling wireless headphones with long battery life.,Electronics,Sony,Black,Standard,Aluminum,3150,3.9
+216,Laptop Model 216,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Sony,Black,14 inch,Plastic,62601,4.3
+217,Wireless Headphones Model 217,Noise cancelling wireless headphones with long battery life.,Electronics,Nike,Green,Standard,Aluminum,9516,3.8
+218,Running Shoes Model 218,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,ASUS,Black,10,Leather,4873,4.3
+219,Laptop Model 219,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,ASUS,Red,15.6 inch,Leather,88117,3.7
+220,Running Shoes Model 220,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Sony,Green,7,Synthetic,6211,4.0
+221,Wireless Headphones Model 221,Noise cancelling wireless headphones with long battery life.,Electronics,Dell,White,Standard,Mesh,3283,3.8
+222,Running Shoes Model 222,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Nike,Blue,6,Aluminum,3298,4.2
+223,Laptop Model 223,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Samsung,Green,15.6 inch,Leather,50821,3.8
+224,Laptop Model 224,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,ASUS,Gray,14 inch,Glass,102237,4.6
+225,Laptop Model 225,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Apple,Black,15.6 inch,Synthetic,109936,4.2
+226,Running Shoes Model 226,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,White,10,Plastic,6387,4.0
+227,Running Shoes Model 227,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,ASUS,Black,11,Leather,3083,4.4
+228,Laptop Model 228,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Puma,Blue,14 inch,Aluminum,95845,4.1
+229,Laptop Model 229,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Adidas,White,13 inch,Synthetic,84573,4.5
+230,Running Shoes Model 230,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Boat,White,10,Plastic,4211,3.6
+231,Running Shoes Model 231,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Apple,Green,6,Mesh,6877,4.8
+232,Wireless Headphones Model 232,Noise cancelling wireless headphones with long battery life.,Electronics,Samsung,Red,Standard,Mesh,5903,3.9
+233,Laptop Model 233,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Adidas,Green,13 inch,Synthetic,49654,4.4
+234,Running Shoes Model 234,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,Blue,11,Plastic,3258,4.6
+235,Wireless Headphones Model 235,Noise cancelling wireless headphones with long battery life.,Electronics,Adidas,White,Standard,Mesh,4939,4.2
+236,Wireless Headphones Model 236,Noise cancelling wireless headphones with long battery life.,Electronics,Puma,Green,Standard,Plastic,4519,4.1
+237,Running Shoes Model 237,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Puma,Red,7,Glass,7411,4.5
+238,Laptop Model 238,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,HP,Black,15.6 inch,Leather,115741,3.9
+239,Running Shoes Model 239,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Dell,Red,8,Leather,3956,3.7
+240,Wireless Headphones Model 240,Noise cancelling wireless headphones with long battery life.,Electronics,Apple,Black,Standard,Leather,7031,4.4
+241,Wireless Headphones Model 241,Noise cancelling wireless headphones with long battery life.,Electronics,Adidas,White,Standard,Leather,7904,4.2
+242,Wireless Headphones Model 242,Noise cancelling wireless headphones with long battery life.,Electronics,Puma,Green,Standard,Mesh,5823,4.0
+243,Running Shoes Model 243,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Apple,Red,11,Synthetic,2997,3.9
+244,Laptop Model 244,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Dell,Gray,14 inch,Leather,74231,3.8
+245,Laptop Model 245,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Nike,Gray,15.6 inch,Plastic,61107,5.0
+246,Running Shoes Model 246,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Nike,Blue,10,Synthetic,5985,4.1
+247,Running Shoes Model 247,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Puma,White,8,Aluminum,2936,4.9
+248,Laptop Model 248,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Boat,Red,15.6 inch,Synthetic,31404,4.8
+249,Wireless Headphones Model 249,Noise cancelling wireless headphones with long battery life.,Electronics,Nike,Green,Standard,Synthetic,14904,3.5
+250,Laptop Model 250,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Samsung,Black,14 inch,Synthetic,39161,3.8
+251,Laptop Model 251,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Apple,Blue,13 inch,Synthetic,107095,4.3
+252,Running Shoes Model 252,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Apple,Green,11,Aluminum,6333,4.4
+253,Running Shoes Model 253,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,HP,Red,8,Plastic,2982,4.1
+254,Laptop Model 254,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Adidas,White,13 inch,Synthetic,46945,4.6
+255,Laptop Model 255,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Puma,Gray,15.6 inch,Mesh,108298,4.0
+256,Wireless Headphones Model 256,Noise cancelling wireless headphones with long battery life.,Electronics,Nike,Black,Standard,Glass,14939,4.6
+257,Laptop Model 257,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Samsung,Gray,15.6 inch,Mesh,43556,4.8
+258,Wireless Headphones Model 258,Noise cancelling wireless headphones with long battery life.,Electronics,Dell,Red,Standard,Leather,6380,3.9
+259,Wireless Headphones Model 259,Noise cancelling wireless headphones with long battery life.,Electronics,Nike,Green,Standard,Plastic,6207,5.0
+260,Wireless Headphones Model 260,Noise cancelling wireless headphones with long battery life.,Electronics,ASUS,Red,Standard,Mesh,2115,3.6
+261,Wireless Headphones Model 261,Noise cancelling wireless headphones with long battery life.,Electronics,Dell,Green,Standard,Leather,5998,4.4
+262,Wireless Headphones Model 262,Noise cancelling wireless headphones with long battery life.,Electronics,Dell,Gray,Standard,Plastic,9787,4.5
+263,Wireless Headphones Model 263,Noise cancelling wireless headphones with long battery life.,Electronics,Nike,Black,Standard,Glass,9171,4.0
+264,Running Shoes Model 264,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Puma,White,9,Plastic,7445,3.8
+265,Laptop Model 265,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Adidas,Blue,13 inch,Plastic,118685,4.8
+266,Wireless Headphones Model 266,Noise cancelling wireless headphones with long battery life.,Electronics,Puma,Black,Standard,Leather,5527,4.6
+267,Wireless Headphones Model 267,Noise cancelling wireless headphones with long battery life.,Electronics,Samsung,Black,Standard,Mesh,11479,4.9
+268,Running Shoes Model 268,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Puma,Blue,10,Synthetic,3108,3.6
+269,Laptop Model 269,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,ASUS,Red,15.6 inch,Synthetic,47798,4.1
+270,Running Shoes Model 270,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Apple,Blue,9,Aluminum,3972,4.8
+271,Running Shoes Model 271,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Dell,Green,8,Synthetic,4286,3.7
+272,Laptop Model 272,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Sony,Blue,15.6 inch,Leather,78477,4.2
+273,Wireless Headphones Model 273,Noise cancelling wireless headphones with long battery life.,Electronics,Sony,Red,Standard,Mesh,3998,3.9
+274,Laptop Model 274,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Dell,Gray,15.6 inch,Glass,58289,4.4
+275,Running Shoes Model 275,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Boat,Blue,6,Aluminum,6495,4.1
+276,Running Shoes Model 276,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,Black,6,Leather,3228,3.5
+277,Wireless Headphones Model 277,Noise cancelling wireless headphones with long battery life.,Electronics,ASUS,Gray,Standard,Plastic,13471,4.1
+278,Laptop Model 278,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Dell,Gray,15.6 inch,Aluminum,91928,4.9
+279,Wireless Headphones Model 279,Noise cancelling wireless headphones with long battery life.,Electronics,Adidas,Black,Standard,Plastic,8882,4.4
+280,Wireless Headphones Model 280,Noise cancelling wireless headphones with long battery life.,Electronics,Dell,Black,Standard,Leather,10958,4.2
+281,Laptop Model 281,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Boat,Gray,13 inch,Mesh,91370,4.9
+282,Laptop Model 282,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Puma,Black,13 inch,Aluminum,106430,4.0
+283,Running Shoes Model 283,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Apple,Red,8,Synthetic,7928,4.7
+284,Running Shoes Model 284,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Puma,White,10,Plastic,5725,4.6
+285,Running Shoes Model 285,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,HP,Gray,10,Aluminum,3398,3.9
+286,Wireless Headphones Model 286,Noise cancelling wireless headphones with long battery life.,Electronics,Adidas,Green,Standard,Mesh,3666,4.4
+287,Wireless Headphones Model 287,Noise cancelling wireless headphones with long battery life.,Electronics,Boat,Green,Standard,Leather,4482,4.2
+288,Running Shoes Model 288,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Boat,White,6,Aluminum,6247,3.6
+289,Wireless Headphones Model 289,Noise cancelling wireless headphones with long battery life.,Electronics,Dell,Red,Standard,Leather,12335,4.9
+290,Laptop Model 290,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Nike,Black,14 inch,Aluminum,106861,4.1
+291,Wireless Headphones Model 291,Noise cancelling wireless headphones with long battery life.,Electronics,Boat,Red,Standard,Leather,14915,4.1
+292,Wireless Headphones Model 292,Noise cancelling wireless headphones with long battery life.,Electronics,Samsung,Red,Standard,Leather,11099,4.8
+293,Running Shoes Model 293,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Samsung,Blue,11,Leather,3579,4.7
+294,Running Shoes Model 294,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Samsung,White,8,Mesh,4330,3.8
+295,Wireless Headphones Model 295,Noise cancelling wireless headphones with long battery life.,Electronics,ASUS,White,Standard,Plastic,2884,4.6
+296,Running Shoes Model 296,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Nike,Blue,8,Glass,7874,5.0
+297,Wireless Headphones Model 297,Noise cancelling wireless headphones with long battery life.,Electronics,Sony,Green,Standard,Mesh,10861,4.3
+298,Running Shoes Model 298,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,HP,Black,9,Glass,4968,5.0
+299,Running Shoes Model 299,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Nike,Blue,7,Synthetic,7231,3.9
+300,Laptop Model 300,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Boat,Gray,14 inch,Aluminum,101343,4.9
+301,Laptop Model 301,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Sony,Black,13 inch,Aluminum,78907,4.4
+302,Wireless Headphones Model 302,Noise cancelling wireless headphones with long battery life.,Electronics,Boat,White,Standard,Aluminum,8550,4.4
+303,Wireless Headphones Model 303,Noise cancelling wireless headphones with long battery life.,Electronics,Dell,Black,Standard,Plastic,11495,4.4
+304,Running Shoes Model 304,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Apple,Green,6,Glass,5006,3.8
+305,Wireless Headphones Model 305,Noise cancelling wireless headphones with long battery life.,Electronics,Dell,Green,Standard,Synthetic,13598,4.3
+306,Wireless Headphones Model 306,Noise cancelling wireless headphones with long battery life.,Electronics,Apple,Red,Standard,Glass,12897,4.6
+307,Laptop Model 307,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Nike,Red,14 inch,Aluminum,70445,4.8
+308,Running Shoes Model 308,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Nike,Red,11,Glass,7670,3.7
+309,Running Shoes Model 309,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Sony,Gray,9,Leather,6486,4.5
+310,Laptop Model 310,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Dell,Green,15.6 inch,Plastic,63876,4.1
+311,Wireless Headphones Model 311,Noise cancelling wireless headphones with long battery life.,Electronics,Boat,Red,Standard,Plastic,8012,4.6
+312,Running Shoes Model 312,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Apple,Blue,6,Mesh,4962,4.7
+313,Wireless Headphones Model 313,Noise cancelling wireless headphones with long battery life.,Electronics,HP,White,Standard,Synthetic,12934,3.9
+314,Wireless Headphones Model 314,Noise cancelling wireless headphones with long battery life.,Electronics,Sony,Green,Standard,Plastic,4430,3.8
+315,Wireless Headphones Model 315,Noise cancelling wireless headphones with long battery life.,Electronics,Boat,White,Standard,Leather,13908,3.6
+316,Wireless Headphones Model 316,Noise cancelling wireless headphones with long battery life.,Electronics,Apple,Gray,Standard,Mesh,6185,4.8
+317,Running Shoes Model 317,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,Black,10,Glass,6459,3.6
+318,Wireless Headphones Model 318,Noise cancelling wireless headphones with long battery life.,Electronics,Sony,Blue,Standard,Aluminum,12144,4.7
+319,Running Shoes Model 319,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Sony,Blue,10,Aluminum,7884,4.9
+320,Laptop Model 320,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Puma,Gray,14 inch,Leather,103093,4.9
+321,Running Shoes Model 321,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,HP,Gray,11,Plastic,6479,3.9
+322,Running Shoes Model 322,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Nike,Black,7,Synthetic,3086,4.3
+323,Wireless Headphones Model 323,Noise cancelling wireless headphones with long battery life.,Electronics,Nike,Red,Standard,Synthetic,14961,3.7
+324,Laptop Model 324,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Apple,Red,15.6 inch,Leather,79728,4.7
+325,Laptop Model 325,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Sony,White,14 inch,Aluminum,58596,4.5
+326,Running Shoes Model 326,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,Red,7,Plastic,6349,5.0
+327,Laptop Model 327,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Sony,White,14 inch,Plastic,96546,3.6
+328,Running Shoes Model 328,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Boat,Blue,8,Leather,4938,4.6
+329,Wireless Headphones Model 329,Noise cancelling wireless headphones with long battery life.,Electronics,Adidas,Blue,Standard,Mesh,7324,4.7
+330,Laptop Model 330,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Dell,Red,13 inch,Synthetic,40227,4.7
+331,Wireless Headphones Model 331,Noise cancelling wireless headphones with long battery life.,Electronics,HP,Green,Standard,Aluminum,2420,4.4
+332,Wireless Headphones Model 332,Noise cancelling wireless headphones with long battery life.,Electronics,Dell,Gray,Standard,Glass,4929,4.0
+333,Wireless Headphones Model 333,Noise cancelling wireless headphones with long battery life.,Electronics,Nike,Green,Standard,Synthetic,9783,4.1
+334,Running Shoes Model 334,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Nike,Black,7,Synthetic,2796,4.3
+335,Wireless Headphones Model 335,Noise cancelling wireless headphones with long battery life.,Electronics,Boat,Green,Standard,Synthetic,6771,3.8
+336,Laptop Model 336,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Apple,Red,13 inch,Synthetic,75134,4.0
+337,Running Shoes Model 337,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Sony,White,10,Plastic,7262,3.9
+338,Laptop Model 338,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Sony,Green,15.6 inch,Glass,44936,3.8
+339,Wireless Headphones Model 339,Noise cancelling wireless headphones with long battery life.,Electronics,Puma,Black,Standard,Leather,7478,4.5
+340,Wireless Headphones Model 340,Noise cancelling wireless headphones with long battery life.,Electronics,Puma,White,Standard,Mesh,7352,4.3
+341,Running Shoes Model 341,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,Black,10,Aluminum,2675,4.2
+342,Laptop Model 342,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Samsung,Red,13 inch,Leather,98796,4.1
+343,Laptop Model 343,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Samsung,Blue,14 inch,Glass,52030,4.8
+344,Wireless Headphones Model 344,Noise cancelling wireless headphones with long battery life.,Electronics,Nike,Gray,Standard,Synthetic,6625,4.7
+345,Wireless Headphones Model 345,Noise cancelling wireless headphones with long battery life.,Electronics,Boat,Blue,Standard,Aluminum,14317,4.5
+346,Laptop Model 346,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Puma,Gray,15.6 inch,Leather,69673,4.3
+347,Laptop Model 347,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Boat,Black,15.6 inch,Synthetic,36989,3.8
+348,Running Shoes Model 348,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Nike,White,6,Mesh,7050,4.7
+349,Running Shoes Model 349,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Samsung,Green,9,Leather,7004,4.4
+350,Wireless Headphones Model 350,Noise cancelling wireless headphones with long battery life.,Electronics,Nike,Red,Standard,Mesh,3079,4.1
+351,Laptop Model 351,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Nike,White,14 inch,Aluminum,115223,4.6
+352,Running Shoes Model 352,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,White,6,Mesh,5560,4.1
+353,Running Shoes Model 353,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Dell,White,8,Mesh,3316,3.9
+354,Wireless Headphones Model 354,Noise cancelling wireless headphones with long battery life.,Electronics,HP,Blue,Standard,Aluminum,14803,3.7
+355,Running Shoes Model 355,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Boat,Green,7,Synthetic,3802,4.5
+356,Wireless Headphones Model 356,Noise cancelling wireless headphones with long battery life.,Electronics,Adidas,Blue,Standard,Mesh,10516,4.5
+357,Wireless Headphones Model 357,Noise cancelling wireless headphones with long battery life.,Electronics,Puma,Red,Standard,Glass,2238,4.2
+358,Running Shoes Model 358,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Sony,White,6,Aluminum,6277,4.3
+359,Laptop Model 359,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Nike,Green,13 inch,Leather,89489,3.8
+360,Running Shoes Model 360,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,Gray,11,Leather,4681,4.0
+361,Laptop Model 361,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Sony,Red,14 inch,Mesh,93834,4.4
+362,Wireless Headphones Model 362,Noise cancelling wireless headphones with long battery life.,Electronics,Nike,Black,Standard,Synthetic,6282,5.0
+363,Wireless Headphones Model 363,Noise cancelling wireless headphones with long battery life.,Electronics,HP,Black,Standard,Mesh,10197,4.3
+364,Running Shoes Model 364,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Dell,Red,10,Aluminum,4678,4.7
+365,Wireless Headphones Model 365,Noise cancelling wireless headphones with long battery life.,Electronics,Adidas,Blue,Standard,Synthetic,6763,4.1
+366,Laptop Model 366,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,ASUS,White,14 inch,Glass,109459,4.0
+367,Wireless Headphones Model 367,Noise cancelling wireless headphones with long battery life.,Electronics,Adidas,White,Standard,Glass,10395,4.7
+368,Wireless Headphones Model 368,Noise cancelling wireless headphones with long battery life.,Electronics,Apple,Red,Standard,Glass,8385,4.7
+369,Wireless Headphones Model 369,Noise cancelling wireless headphones with long battery life.,Electronics,Adidas,Gray,Standard,Glass,7778,4.3
+370,Running Shoes Model 370,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Apple,Gray,11,Leather,6801,3.6
+371,Wireless Headphones Model 371,Noise cancelling wireless headphones with long battery life.,Electronics,Samsung,White,Standard,Plastic,8715,3.6
+372,Laptop Model 372,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Samsung,Blue,14 inch,Aluminum,38958,4.7
+373,Running Shoes Model 373,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,ASUS,Green,7,Synthetic,4143,4.8
+374,Laptop Model 374,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Dell,Gray,15.6 inch,Aluminum,106006,4.5
+375,Laptop Model 375,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Boat,Blue,13 inch,Synthetic,52708,3.9
+376,Wireless Headphones Model 376,Noise cancelling wireless headphones with long battery life.,Electronics,Apple,White,Standard,Glass,7370,5.0
+377,Wireless Headphones Model 377,Noise cancelling wireless headphones with long battery life.,Electronics,Boat,Black,Standard,Aluminum,11542,3.8
+378,Wireless Headphones Model 378,Noise cancelling wireless headphones with long battery life.,Electronics,HP,Gray,Standard,Aluminum,3727,4.3
+379,Wireless Headphones Model 379,Noise cancelling wireless headphones with long battery life.,Electronics,Samsung,Red,Standard,Leather,3571,3.7
+380,Laptop Model 380,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Nike,White,15.6 inch,Aluminum,73972,4.7
+381,Laptop Model 381,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Dell,Gray,15.6 inch,Synthetic,87074,5.0
+382,Running Shoes Model 382,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Puma,Black,9,Plastic,7051,3.9
+383,Running Shoes Model 383,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Samsung,White,11,Glass,5561,4.7
+384,Running Shoes Model 384,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,ASUS,Green,7,Mesh,5666,4.2
+385,Laptop Model 385,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Sony,Red,14 inch,Glass,80143,4.2
+386,Running Shoes Model 386,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Dell,Black,8,Plastic,7625,3.9
+387,Wireless Headphones Model 387,Noise cancelling wireless headphones with long battery life.,Electronics,Boat,White,Standard,Mesh,10976,3.7
+388,Running Shoes Model 388,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,ASUS,Blue,11,Aluminum,4807,3.7
+389,Laptop Model 389,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Nike,Red,15.6 inch,Plastic,47089,3.7
+390,Laptop Model 390,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Boat,Red,13 inch,Synthetic,66882,4.3
+391,Laptop Model 391,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Dell,Green,14 inch,Mesh,83381,4.8
+392,Wireless Headphones Model 392,Noise cancelling wireless headphones with long battery life.,Electronics,HP,Green,Standard,Plastic,4571,4.6
+393,Running Shoes Model 393,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Nike,Blue,7,Mesh,6881,3.9
+394,Laptop Model 394,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Apple,White,14 inch,Mesh,65070,4.0
+395,Running Shoes Model 395,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Sony,White,7,Synthetic,6407,4.5
+396,Laptop Model 396,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Apple,Red,14 inch,Leather,59322,4.7
+397,Wireless Headphones Model 397,Noise cancelling wireless headphones with long battery life.,Electronics,ASUS,Blue,Standard,Plastic,9705,4.3
+398,Laptop Model 398,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Nike,Red,13 inch,Mesh,45099,3.7
+399,Laptop Model 399,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Dell,Blue,15.6 inch,Leather,71602,3.6
+400,Running Shoes Model 400,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Puma,Gray,11,Plastic,2787,3.8
+401,Laptop Model 401,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Dell,Gray,13 inch,Glass,46284,3.9
+402,Wireless Headphones Model 402,Noise cancelling wireless headphones with long battery life.,Electronics,Nike,Gray,Standard,Leather,14956,4.6
+403,Laptop Model 403,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Samsung,White,13 inch,Aluminum,86677,4.3
+404,Wireless Headphones Model 404,Noise cancelling wireless headphones with long battery life.,Electronics,HP,Green,Standard,Aluminum,13064,4.0
+405,Wireless Headphones Model 405,Noise cancelling wireless headphones with long battery life.,Electronics,Adidas,Red,Standard,Leather,10625,3.8
+406,Laptop Model 406,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Puma,Black,14 inch,Leather,116155,3.7
+407,Running Shoes Model 407,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,Black,6,Plastic,6353,4.3
+408,Running Shoes Model 408,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Puma,Gray,11,Leather,6188,4.0
+409,Running Shoes Model 409,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Puma,Blue,7,Synthetic,5292,3.6
+410,Laptop Model 410,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Puma,Blue,13 inch,Synthetic,43726,3.5
+411,Wireless Headphones Model 411,Noise cancelling wireless headphones with long battery life.,Electronics,Boat,Black,Standard,Synthetic,12544,4.1
+412,Wireless Headphones Model 412,Noise cancelling wireless headphones with long battery life.,Electronics,Boat,Green,Standard,Plastic,3324,4.0
+413,Laptop Model 413,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Dell,White,14 inch,Plastic,37430,4.5
+414,Laptop Model 414,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Puma,White,15.6 inch,Synthetic,87172,4.0
+415,Running Shoes Model 415,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Samsung,Black,9,Leather,4303,4.4
+416,Running Shoes Model 416,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,Blue,10,Mesh,5747,4.1
+417,Wireless Headphones Model 417,Noise cancelling wireless headphones with long battery life.,Electronics,Dell,Red,Standard,Leather,9949,4.6
+418,Wireless Headphones Model 418,Noise cancelling wireless headphones with long battery life.,Electronics,Apple,Blue,Standard,Plastic,11135,4.8
+419,Wireless Headphones Model 419,Noise cancelling wireless headphones with long battery life.,Electronics,ASUS,Red,Standard,Aluminum,2633,4.0
+420,Laptop Model 420,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Nike,Gray,15.6 inch,Synthetic,100525,4.7
+421,Running Shoes Model 421,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Dell,Blue,6,Leather,6197,3.6
+422,Running Shoes Model 422,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Nike,Red,8,Aluminum,3485,4.9
+423,Laptop Model 423,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Boat,Red,13 inch,Synthetic,113068,4.7
+424,Running Shoes Model 424,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Samsung,White,11,Aluminum,3154,3.7
+425,Wireless Headphones Model 425,Noise cancelling wireless headphones with long battery life.,Electronics,Apple,Gray,Standard,Leather,14530,4.2
+426,Running Shoes Model 426,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Samsung,Gray,7,Aluminum,7837,3.9
+427,Running Shoes Model 427,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Dell,Gray,8,Leather,5787,4.6
+428,Running Shoes Model 428,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,Green,11,Synthetic,6392,4.8
+429,Laptop Model 429,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Puma,Black,15.6 inch,Synthetic,67746,4.6
+430,Wireless Headphones Model 430,Noise cancelling wireless headphones with long battery life.,Electronics,Samsung,Red,Standard,Plastic,4088,4.9
+431,Running Shoes Model 431,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,ASUS,Blue,6,Plastic,5257,4.7
+432,Wireless Headphones Model 432,Noise cancelling wireless headphones with long battery life.,Electronics,HP,Green,Standard,Mesh,8352,4.6
+433,Laptop Model 433,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Puma,Gray,14 inch,Plastic,69233,3.9
+434,Running Shoes Model 434,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Nike,Blue,11,Synthetic,6073,4.8
+435,Wireless Headphones Model 435,Noise cancelling wireless headphones with long battery life.,Electronics,HP,Gray,Standard,Mesh,14828,4.1
+436,Running Shoes Model 436,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Boat,Red,11,Synthetic,3869,4.0
+437,Running Shoes Model 437,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Dell,Red,11,Aluminum,7169,4.2
+438,Running Shoes Model 438,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,ASUS,Gray,10,Mesh,4956,5.0
+439,Wireless Headphones Model 439,Noise cancelling wireless headphones with long battery life.,Electronics,Sony,Blue,Standard,Glass,6698,4.6
+440,Running Shoes Model 440,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Puma,Gray,7,Mesh,4990,4.3
+441,Wireless Headphones Model 441,Noise cancelling wireless headphones with long battery life.,Electronics,Sony,Blue,Standard,Leather,2003,4.6
+442,Running Shoes Model 442,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Sony,Red,9,Aluminum,7745,4.5
+443,Laptop Model 443,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Dell,White,14 inch,Mesh,51938,4.2
+444,Running Shoes Model 444,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Samsung,Red,10,Synthetic,2880,3.8
+445,Wireless Headphones Model 445,Noise cancelling wireless headphones with long battery life.,Electronics,Boat,Green,Standard,Aluminum,6440,4.6
+446,Running Shoes Model 446,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,Gray,6,Plastic,6233,4.9
+447,Running Shoes Model 447,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,White,11,Synthetic,5566,3.9
+448,Wireless Headphones Model 448,Noise cancelling wireless headphones with long battery life.,Electronics,Apple,Gray,Standard,Leather,3791,3.6
+449,Running Shoes Model 449,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,White,8,Leather,4022,4.5
+450,Laptop Model 450,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Sony,Blue,15.6 inch,Plastic,87192,4.4
+451,Wireless Headphones Model 451,Noise cancelling wireless headphones with long battery life.,Electronics,Boat,Green,Standard,Synthetic,9834,3.9
+452,Wireless Headphones Model 452,Noise cancelling wireless headphones with long battery life.,Electronics,Dell,Blue,Standard,Plastic,9448,4.0
+453,Running Shoes Model 453,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Nike,White,7,Synthetic,5740,4.6
+454,Running Shoes Model 454,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Nike,Red,6,Plastic,5286,4.7
+455,Laptop Model 455,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,ASUS,Blue,13 inch,Leather,114416,4.8
+456,Wireless Headphones Model 456,Noise cancelling wireless headphones with long battery life.,Electronics,Dell,Green,Standard,Plastic,8808,3.9
+457,Laptop Model 457,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Puma,White,15.6 inch,Leather,99009,4.0
+458,Running Shoes Model 458,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Nike,Gray,7,Aluminum,7978,4.6
+459,Running Shoes Model 459,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Nike,Blue,10,Leather,7740,4.1
+460,Laptop Model 460,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Nike,Green,13 inch,Aluminum,109634,4.2
+461,Wireless Headphones Model 461,Noise cancelling wireless headphones with long battery life.,Electronics,Nike,White,Standard,Glass,6669,4.1
+462,Laptop Model 462,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Adidas,Red,15.6 inch,Leather,74839,3.8
+463,Running Shoes Model 463,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,Black,10,Synthetic,5312,4.1
+464,Wireless Headphones Model 464,Noise cancelling wireless headphones with long battery life.,Electronics,HP,Gray,Standard,Glass,12228,4.4
+465,Wireless Headphones Model 465,Noise cancelling wireless headphones with long battery life.,Electronics,Dell,Red,Standard,Synthetic,14529,3.7
+466,Wireless Headphones Model 466,Noise cancelling wireless headphones with long battery life.,Electronics,ASUS,Red,Standard,Plastic,13024,4.3
+467,Wireless Headphones Model 467,Noise cancelling wireless headphones with long battery life.,Electronics,Sony,Black,Standard,Synthetic,7846,4.1
+468,Laptop Model 468,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Apple,Green,13 inch,Synthetic,101978,4.4
+469,Wireless Headphones Model 469,Noise cancelling wireless headphones with long battery life.,Electronics,Sony,White,Standard,Mesh,3262,4.7
+470,Wireless Headphones Model 470,Noise cancelling wireless headphones with long battery life.,Electronics,ASUS,Black,Standard,Glass,11875,4.5
+471,Wireless Headphones Model 471,Noise cancelling wireless headphones with long battery life.,Electronics,Puma,White,Standard,Plastic,3823,4.1
+472,Wireless Headphones Model 472,Noise cancelling wireless headphones with long battery life.,Electronics,Sony,Red,Standard,Leather,14201,3.7
+473,Wireless Headphones Model 473,Noise cancelling wireless headphones with long battery life.,Electronics,Boat,Black,Standard,Aluminum,6599,4.2
+474,Running Shoes Model 474,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Dell,White,7,Aluminum,3913,5.0
+475,Laptop Model 475,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Sony,White,14 inch,Glass,119872,4.4
+476,Laptop Model 476,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Sony,Black,14 inch,Mesh,108094,4.0
+477,Wireless Headphones Model 477,Noise cancelling wireless headphones with long battery life.,Electronics,HP,Red,Standard,Aluminum,10028,3.6
+478,Laptop Model 478,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Dell,Gray,13 inch,Plastic,97932,3.5
+479,Wireless Headphones Model 479,Noise cancelling wireless headphones with long battery life.,Electronics,ASUS,Blue,Standard,Synthetic,8178,4.8
+480,Running Shoes Model 480,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,ASUS,Blue,8,Leather,3595,3.6
+481,Running Shoes Model 481,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Apple,Green,11,Aluminum,5030,4.2
+482,Running Shoes Model 482,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,Green,8,Plastic,7172,3.7
+483,Laptop Model 483,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Samsung,Red,15.6 inch,Synthetic,61094,3.6
+484,Wireless Headphones Model 484,Noise cancelling wireless headphones with long battery life.,Electronics,Sony,Green,Standard,Plastic,12891,4.0
+485,Laptop Model 485,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,HP,Blue,13 inch,Aluminum,39709,4.6
+486,Laptop Model 486,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Nike,Blue,13 inch,Synthetic,75754,4.1
+487,Laptop Model 487,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Puma,Green,15.6 inch,Mesh,119358,4.2
+488,Running Shoes Model 488,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Nike,Black,10,Synthetic,2568,4.7
+489,Laptop Model 489,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Boat,Black,14 inch,Aluminum,104499,4.2
+490,Running Shoes Model 490,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Adidas,Gray,8,Aluminum,7711,4.3
+491,Wireless Headphones Model 491,Noise cancelling wireless headphones with long battery life.,Electronics,Samsung,Blue,Standard,Aluminum,2991,4.5
+492,Laptop Model 492,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Nike,White,15.6 inch,Glass,61525,4.2
+493,Running Shoes Model 493,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Apple,Green,6,Plastic,4762,4.7
+494,Running Shoes Model 494,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Nike,Gray,10,Plastic,7002,3.7
+495,Wireless Headphones Model 495,Noise cancelling wireless headphones with long battery life.,Electronics,HP,White,Standard,Mesh,4515,4.6
+496,Laptop Model 496,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Apple,Gray,13 inch,Glass,38500,4.4
+497,Laptop Model 497,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Dell,White,15.6 inch,Mesh,81150,3.7
+498,Laptop Model 498,"High performance laptop suitable for coding, gaming, and multitasking.",Electronics,Apple,Gray,13 inch,Mesh,52006,3.6
+499,Running Shoes Model 499,Comfortable lightweight running shoes suitable for daily use and flat feet.,Footwear,Samsung,Gray,11,Synthetic,2978,4.1
+500,Wireless Headphones Model 500,Noise cancelling wireless headphones with long battery life.,Electronics,Apple,Black,Standard,Aluminum,7879,4.1
