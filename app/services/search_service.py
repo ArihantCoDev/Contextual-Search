@@ -254,6 +254,31 @@ class SearchService:
             if not is_empty(ui_filters.size):
                 size = ui_filters.size
         
+        # Conflict resolution: If UI provided price filters, clear conflicting NLP constraints
+        # This ensures UI precedence and prevents conflicts
+        ui_has_price = ui_filters and (not is_empty(ui_filters.price_min) or 
+                                       not is_empty(ui_filters.price_max) or 
+                                       not is_empty(ui_filters.max_price))
+        
+        if ui_has_price:
+            # If UI set price_max but NLP set price_min, and they conflict, clear NLP price_min
+            if price_max is not None and price_min is not None and price_min > price_max:
+                # Check which came from UI vs NLP
+                ui_set_min = ui_filters and not is_empty(ui_filters.price_min)
+                ui_set_max = ui_filters and (not is_empty(ui_filters.price_max) or not is_empty(ui_filters.max_price))
+                
+                # Clear the NLP-originated constraint
+                if not ui_set_min:  # price_min came from NLP
+                    price_min = None
+                if not ui_set_max:  # price_max came from NLP
+                    price_max = None
+        
+        # Re-check for conflicts after UI override
+        if price_min is not None and price_max is not None and price_min > price_max:
+            conflict = True
+        else:
+            conflict = False
+        
         # Create merged filters
         merged = SearchFilters(
             price_min=price_min,
