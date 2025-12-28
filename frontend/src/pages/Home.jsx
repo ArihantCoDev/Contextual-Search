@@ -52,9 +52,12 @@ export default function Home() {
 
         try {
             // Map frontend filter keys to API expected keys
+            // Send all filter fields so backend knows UI filters are being used
             const apiFilters = {
-                category: filters.category,
-                max_price: filters.price_max ? parseFloat(filters.price_max) : null,
+                category: filters.category || null,
+                price_min: filters.price_min ? parseFloat(filters.price_min) : null,
+                price_max: filters.price_max ? parseFloat(filters.price_max) : null,
+                max_price: filters.price_max ? parseFloat(filters.price_max) : null,  // Legacy support
                 min_rating: filters.rating ? parseFloat(filters.rating) : null
             };
 
