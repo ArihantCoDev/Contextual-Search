@@ -12,8 +12,8 @@ sys.path.insert(0, 'D:/contextual-search')
 import requests
 import json
 
-# Base URL
-BASE_URL = "http://localhost:8000/search"
+# Base URL - FIXED: endpoint is /api/search not /search
+BASE_URL = "http://localhost:8000/api/search"
 
 def test_search_query(query, description=""):
     """Test a search query and display results."""

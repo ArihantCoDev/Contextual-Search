@@ -188,9 +188,9 @@ class SearchService:
         Merge NLP-extracted constraints with UI-provided filters.
         
         **STRICT UI PRECEDENCE**: 
-        - If UI provides filters, they COMPLETELY OVERRIDE NLP for category, price, rating
-        - If UI filters object is None, use NLP constraints
-        - If UI filters object exists but field is None/empty, it means "no filter" (overrides NLP)
+        - If UI provides filters with actual values, they COMPLETELY OVERRIDE NLP for category, price, rating
+        - If UI filters object is None OR all fields are None, use NLP constraints
+        - If UI filters object exists with some values, those values override NLP
         
         Args:
             nlp_constraints: Constraints extracted from NLP
@@ -214,19 +214,45 @@ class SearchService:
                 conflict=nlp_constraints.get('conflict', False)
             )
         
-        # UI filters object exists - UI takes STRICT precedence for core filters
-        # For price, rating, category: UI value (even if None) overrides NLP
-        # For brand, color, size: keep NLP if UI doesn't specify (backward compat)
+        # Check if UI filters object has ANY non-None core filter values
+        # (category, price_min, price_max, max_price, min_rating)
+        has_ui_filters = any([
+            ui_filters.category is not None and ui_filters.category != '',
+            ui_filters.price_min is not None,
+            ui_filters.price_max is not None,
+            ui_filters.max_price is not None,
+            ui_filters.min_rating is not None
+        ])
         
-        # Price filters: UI strictly overrides
-        price_min = ui_filters.price_min  # Use UI value (None means no min filter)
-        price_max = ui_filters.price_max or ui_filters.max_price  # Support legacy field
+        # If UI filter object exists but ALL core fields are None/empty, 
+        # treat it as "no UI filters" and use NLP
+        if not has_ui_filters:
+            logger.info("UI filter object provided but all values are None/empty - using NLP constraints")
+            return SearchFilters(
+                price_min=nlp_constraints.get('price_min'),
+                price_max=nlp_constraints.get('price_max'),
+                min_rating=nlp_constraints.get('rating_min'),
+                category=nlp_constraints.get('category'),
+                brand=nlp_constraints.get('brand'),
+                color=nlp_constraints.get('color'),
+                size=nlp_constraints.get('size'),
+                approximate_price=nlp_constraints.get('approximate_price', False),
+                fuzzy_price=nlp_constraints.get('fuzzy_price', False),
+                conflict=nlp_constraints.get('conflict', False)
+            )
         
-        # Rating filter: UI strictly overrides
-        min_rating = ui_filters.min_rating  # Use UI value (None means no rating filter)
+        # UI filters object exists with actual values - UI takes STRICT precedence
+        logger.info("UI filters detected - applying strict UI precedence")
         
-        # Category: UI strictly overrides
-        category = ui_filters.category  # Use UI value (None means no category filter)
+        # Price filters: UI strictly overrides when provided
+        price_min = ui_filters.price_min if ui_filters.price_min is not None else nlp_constraints.get('price_min')
+        price_max = (ui_filters.price_max or ui_filters.max_price) if (ui_filters.price_max is not None or ui_filters.max_price is not None) else nlp_constraints.get('price_max')
+        
+        # Rating filter: UI strictly overrides when provided
+        min_rating = ui_filters.min_rating if ui_filters.min_rating is not None else nlp_constraints.get('rating_min')
+        
+        # Category: UI strictly overrides when provided (and not empty string)
+        category = ui_filters.category if (ui_filters.category is not None and ui_filters.category != '') else nlp_constraints.get('category')
         
         # Brand, Color, Size: Use UI if provided, otherwise fall back to NLP
         brand = ui_filters.brand if ui_filters.brand is not None else nlp_constraints.get('brand')

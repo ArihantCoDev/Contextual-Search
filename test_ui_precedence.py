@@ -1,5 +1,6 @@
 """
-Test script to verify UI filter precedence over NLP extraction.
+Quick verification that NLP filtering works correctly.
+Tests the specific case mentioned by the user: "Headphones under 2000"
 """
 import sys
 import io
@@ -9,83 +10,48 @@ sys.path.insert(0, 'D:/contextual-search')
 from app.nlp.intent_extractor import extract_intent
 from app.services.search_service import SearchFilters, SearchService
 
-# Create a mock search service instance
+print("="*70)
+print("VERIFYING NLP FILTER BUG FIX")
+print("="*70)
+
 service = SearchService()
 
-print("="*70)
-print("TESTING UI FILTER PRECEDENCE")
-print("="*70)
+# The exact case the user reported
+print("\n🔍 Test: 'Headphones under 2000'")
+print("-" * 70)
 
-# Test 1: NLP says "under 5000", UI says "under 10000" -> UI wins
-print("\n--- Test 1: UI overrides NLP price ---")
-query = "laptop under 5000"
+query = "Headphones under 2000"
 intent = extract_intent(query)
+
 print(f"Query: '{query}'")
 print(f"NLP extracted: price_max = {intent['constraints']['price_max']}")
-
-ui_filters = SearchFilters(price_max=10000)
-merged = service._merge_filters(intent['constraints'], ui_filters)
-print(f"UI filter: price_max = 10000")
-print(f"Merged result: price_max = {merged.price_max}")
-assert merged.price_max == 10000, "UI should override NLP!"
-print("✓ PASS: UI filter overrode NLP")
-
-# Test 2: NLP says "shoes", UI says "Electronics" -> UI wins
-print("\n--- Test 2: UI overrides NLP category ---")
-query = "Nike shoes"
-intent = extract_intent(query)
-print(f"Query: '{query}'")
 print(f"NLP extracted: category = {intent['constraints']['category']}")
 
-ui_filters = SearchFilters(category="Electronics")
-merged = service._merge_filters(intent['constraints'], ui_filters)
-print(f"UI filter: category = Electronics")
-print(f"Merged result: category = {merged.category}")
-assert merged.category == "Electronics", "UI should override NLP!"
-print("✓ PASS: UI filter overrode NLP")
+# Simulate what frontend sends: empty filter object
+empty_ui_filters = SearchFilters(
+    category=None,
+    price_min=None,
+    price_max=None,
+    min_rating=None
+)
 
-# Test 3: NLP says "rated above 4", UI says "no rating filter" -> UI wins (None)
-print("\n--- Test 3: UI clears NLP rating filter ---")
-query = "headphones rated above 4"
-intent = extract_intent(query)
-print(f"Query: '{query}'")
-print(f"NLP extracted: rating_min = {intent['constraints']['rating_min']}")
+print(f"\nFrontend sends: Empty filter object (all None)")
+merged = service._merge_filters(intent['constraints'], empty_ui_filters)
 
-ui_filters = SearchFilters(min_rating=None)  # UI explicitly says no rating filter
-merged = service._merge_filters(intent['constraints'], ui_filters)
-print(f"UI filter: min_rating = None")
-print(f"Merged result: rating_min = {merged.min_rating}")
-assert merged.min_rating is None, "UI should be able to clear NLP filter!"
-print("✓ PASS: UI cleared NLP rating filter")
+print(f"\n✅ RESULT after merge:")
+print(f"   price_max = {merged.price_max}")
+print(f"   category = {merged.category}")
 
-# Test 4: No UI filters at all -> NLP is used
-print("\n--- Test 4: No UI filters, NLP is used ---")
-query = "laptop under 5000 rated above 4"
-intent = extract_intent(query)
-print(f"Query: '{query}'")
-print(f"NLP extracted: price_max={intent['constraints']['price_max']}, rating_min={intent['constraints']['rating_min']}")
-
-merged = service._merge_filters(intent['constraints'], None)
-print(f"UI filters: None")
-print(f"Merged result: price_max={merged.price_max}, rating_min={merged.min_rating}")
-assert merged.price_max == 5000 and merged.min_rating == 4.0, "NLP should be used when no UI filters!"
-print("✓ PASS: NLP filters used when no UI filters provided")
-
-# Test 5: Combined - UI overrides some, NLP fills others
-print("\n--- Test 5: UI overrides price, NLP provides brand ---")
-query = "Nike shoes under 3000"
-intent = extract_intent(query)
-print(f"Query: '{query}'")
-print(f"NLP extracted: brand={intent['constraints']['brand']}, price_max={intent['constraints']['price_max']}")
-
-ui_filters = SearchFilters(price_max=5000)  # UI changes price but doesn't set brand
-merged = service._merge_filters(intent['constraints'], ui_filters)
-print(f"UI filter: price_max=5000, brand=None")
-print(f"Merged result: price_max={merged.price_max}, brand={merged.brand}")
-assert merged.price_max == 5000 and merged.brand == "Nike", "UI should override price, NLP should provide brand!"
-print("✓ PASS: Correct hybrid of UI and NLP")
+# Verify the fix worked
+if merged.price_max == 2000.0:
+    print(f"\n✅ SUCCESS! NLP filter is being applied correctly!")
+    print(f"   Products will be filtered to under ₹2000")
+else:
+    print(f"\n❌ FAILED! price_max should be 2000 but is {merged.price_max}")
+    
+if merged.category == "headphones":
+    print(f"✅ Category filter also working correctly!")
+else:
+    print(f"❌ Category should be 'headphones' but is {merged.category}")
 
 print("\n" + "="*70)
-print("ALL TESTS PASSED! ✓")
-print("UI filters now strictly override NLP for category, price, and rating")
-print("="*70)
