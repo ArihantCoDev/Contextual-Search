@@ -8,6 +8,7 @@ from app.services.ingestion_service import get_ingestion_service, IngestionServi
 from app.data.product_repository import get_product_repository
 from app.data.vector_repository import get_vector_repository
 from app.ai.embedding_service import get_embedding_service
+from app.nlp.intent_extractor import extract_intent
 from app.utils.logger import logger
 
 
@@ -15,9 +16,26 @@ class SearchFilters(BaseModel):
     """
     Structured filters for search.
     """
-    max_price: Optional[float] = Field(None, description="Maximum price filter")
-    category: Optional[str] = Field(None, description="Category filter (exact match)")
+    # Price filters
+    price_min: Optional[float] = Field(None, description="Minimum price filter")
+    price_max: Optional[float] = Field(None, description="Maximum price filter (alias: max_price)")
+    max_price: Optional[float] = Field(None, description="Maximum price filter (deprecated, use price_max)")
+    
+    # Rating filter
     min_rating: Optional[float] = Field(None, description="Minimum rating filter")
+    
+    # Category and brand
+    category: Optional[str] = Field(None, description="Category filter (exact or substring match)")
+    brand: Optional[str] = Field(None, description="Brand filter")
+    
+    # Attributes
+    color: Optional[str] = Field(None, description="Color filter")
+    size: Optional[str] = Field(None, description="Size filter")
+    
+    # Metadata flags (typically set by NLP, not UI)
+    approximate_price: Optional[bool] = Field(None, description="Whether price is approximate (±15%)")
+    fuzzy_price: Optional[bool] = Field(None, description="Whether to use fuzzy price matching")
+    conflict: Optional[bool] = Field(None, description="Whether there's a constraint conflict")
 
 
 class SearchResult(BaseModel):
@@ -73,19 +91,35 @@ class SearchService:
         
         Args:
             query: Natural language query
-            filters: Optional structured filters
+            filters: Optional structured filters (from UI or API)
             limit: Maximum number of results to return
             
         Returns:
             List of ranked SearchResult objects
         """
         self._ensure_initialized()
-        logger.info(f"Searching for: '{query}' with filters: {filters}")
         
-        # 1. Generate query embedding
-        query_embedding = self.embedding_service.generate_embedding(query)
+        # 1. Extract intent from natural language query using NLP
+        intent = extract_intent(query)
+        semantic_query = intent['semantic_query']
+        nlp_constraints = intent['constraints']
         
-        # 2. Vector Search
+        logger.info(f"Query: '{query}'")
+        logger.info(f"Semantic query: '{semantic_query}'")
+        logger.info(f"NLP constraints: {nlp_constraints}")
+        
+        # 2. Merge NLP constraints with UI filters (UI takes precedence)
+        merged_filters = self._merge_filters(nlp_constraints, filters)
+        logger.info(f"Merged filters: {merged_filters}")
+        
+        # Warn if conflict detected
+        if merged_filters.conflict:
+            logger.warning(f"Conflicting price constraints detected in query: '{query}'")
+        
+        # 3. Generate query embedding using cleaned semantic query
+        query_embedding = self.embedding_service.generate_embedding(semantic_query)
+        
+        # 4. Vector Search
         # We fetch more candidates than 'limit' to allow for post-filtering
         # Rule of thumb: fetch 5x-10x the limit if heavy filtering is expected
         candidate_multiplier = 10
@@ -97,7 +131,7 @@ class SearchService:
             logger.info("No vector matches found")
             return []
             
-        # 3. Retrieve Product Data & 4. Apply Filters
+        # 5. Retrieve Product Data & Apply Filters
         results = []
         
         # We need to process in order of similarity (which FAISS returns)
@@ -110,8 +144,8 @@ class SearchService:
             if not product:
                 continue
                 
-            # Apply filters
-            if not self._passes_filters(product, filters):
+            # Apply merged filters
+            if not self._passes_filters(product, merged_filters):
                 continue
             
             # Convert L2 distance to similarity score (approximate)
@@ -130,13 +164,13 @@ class SearchService:
                 similarity_score=round(similarity, 4)
             ))
             
-        # 5. Apply Learning-to-Rank (Re-ranking)
+        # 6. Apply Learning-to-Rank (Re-ranking)
         if results:
             from app.services.ranking_service import get_ranking_service
             ranking_service = get_ranking_service()
             results = ranking_service.apply_ranking(results)
             
-            # 6. AI Explanation (Enrichment)
+            # 7. AI Explanation (Enrichment)
             # We apply this after ranking so we only explain top results
             from app.services.explanation_orchestrator import get_explanation_orchestrator
             orchestrator = get_explanation_orchestrator()
@@ -144,6 +178,58 @@ class SearchService:
             
         logger.info(f"Search returned {len(results)} results")
         return results
+    
+    def _merge_filters(
+        self, 
+        nlp_constraints: Dict[str, Any], 
+        ui_filters: Optional[SearchFilters]
+    ) -> SearchFilters:
+        """
+        Merge NLP-extracted constraints with UI-provided filters.
+        UI filters take precedence over NLP constraints.
+        
+        Args:
+            nlp_constraints: Constraints extracted from NLP
+            ui_filters: Filters provided from UI/API
+            
+        Returns:
+            Merged SearchFilters object
+        """
+        # Start with NLP constraints
+        merged = SearchFilters(
+            price_min=nlp_constraints.get('price_min'),
+            price_max=nlp_constraints.get('price_max'),
+            min_rating=nlp_constraints.get('rating_min'),
+            category=nlp_constraints.get('category'),
+            brand=nlp_constraints.get('brand'),
+            color=nlp_constraints.get('color'),
+            size=nlp_constraints.get('size'),
+            approximate_price=nlp_constraints.get('approximate_price', False),
+            fuzzy_price=nlp_constraints.get('fuzzy_price', False),
+            conflict=nlp_constraints.get('conflict', False)
+        )
+        
+        # UI filters override NLP constraints
+        if ui_filters:
+            if ui_filters.price_min is not None:
+                merged.price_min = ui_filters.price_min
+            if ui_filters.price_max is not None:
+                merged.price_max = ui_filters.price_max
+            # Support legacy max_price field
+            if ui_filters.max_price is not None:
+                merged.price_max = ui_filters.max_price
+            if ui_filters.min_rating is not None:
+                merged.min_rating = ui_filters.min_rating
+            if ui_filters.category is not None:
+                merged.category = ui_filters.category
+            if ui_filters.brand is not None:
+                merged.brand = ui_filters.brand
+            if ui_filters.color is not None:
+                merged.color = ui_filters.color
+            if ui_filters.size is not None:
+                merged.size = ui_filters.size
+        
+        return merged
 
     def _passes_filters(self, product: Dict[str, Any], filters: Optional[SearchFilters]) -> bool:
         """
@@ -158,10 +244,21 @@ class SearchService:
         """
         if not filters:
             return True
+        
+        # Skip filtering if conflict detected
+        if filters.conflict:
+            logger.warning("Skipping filters due to detected conflict")
+            return True
             
-        # Max Price
-        if filters.max_price is not None:
-            if product.get('price') is None or product['price'] > filters.max_price:
+        # Min Price
+        if filters.price_min is not None:
+            if product.get('price') is None or product['price'] < filters.price_min:
+                return False
+        
+        # Max Price (check both price_max and legacy max_price)
+        max_price = filters.price_max or filters.max_price
+        if max_price is not None:
+            if product.get('price') is None or product['price'] > max_price:
                 return False
                 
         # Min Rating        
@@ -169,14 +266,31 @@ class SearchService:
             if product.get('rating') is None or product['rating'] < filters.min_rating:
                 return False
                 
-        # Category (Case-insensitive match)
+        # Category (Case-insensitive substring match)
         if filters.category:
             prod_cat = product.get('category', '').lower()
             if filters.category.lower() not in prod_cat:
-                # Using 'in' for loose matching, or '==' for strict
-                # Requirements requested: "category: string" - usually implies strict or substring
-                if filters.category.lower() != prod_cat: 
-                    return False
+                return False
+        
+        # Brand (Case-insensitive substring match)
+        if filters.brand:
+            prod_brand = product.get('brand', '').lower()
+            if filters.brand.lower() not in prod_brand:
+                return False
+        
+        # Color (Case-insensitive substring match)
+        if filters.color:
+            # Check in title or description
+            searchable_text = f"{product.get('title', '')} {product.get('description', '')}".lower()
+            if filters.color.lower() not in searchable_text:
+                return False
+        
+        # Size (Case-insensitive substring match)
+        if filters.size:
+            # Check in title or description
+            searchable_text = f"{product.get('title', '')} {product.get('description', '')}".lower()
+            if filters.size.lower() not in searchable_text:
+                return False
                     
         return True
 
