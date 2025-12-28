@@ -1,6 +1,7 @@
 """
 Search service for handling semantic search with filters.
 """
+import time
 from typing import List, Dict, Any, Optional
 from pydantic import BaseModel, Field
 
@@ -97,90 +98,133 @@ class SearchService:
         Returns:
             List of ranked SearchResult objects
         """
-        self._ensure_initialized()
+        # Start latency measurement
+        start_time = time.perf_counter()
         
-        # 1. Extract intent from natural language query using NLP
-        intent = extract_intent(query)
-        semantic_query = intent['semantic_query']
-        nlp_constraints = intent['constraints']
+        try:
+            self._ensure_initialized()
+            
+            # 1. Extract intent from natural language query using NLP
+            intent = extract_intent(query)
+            semantic_query = intent['semantic_query']
+            nlp_constraints = intent['constraints']
+            
+            logger.info(f"Query: '{query}'")
+            logger.info(f"Semantic query: '{semantic_query}'")
+            logger.info(f"NLP constraints: {nlp_constraints}")
+            logger.info(f"UI filters (raw): {filters}")
         
-        logger.info(f"Query: '{query}'")
-        logger.info(f"Semantic query: '{semantic_query}'")
-        logger.info(f"NLP constraints: {nlp_constraints}")
-        logger.info(f"UI filters (raw): {filters}")
-        
-        # 2. Merge NLP constraints with UI filters (UI takes precedence)
-        merged_filters = self._merge_filters(nlp_constraints, filters)
-        logger.info(f"Merged filters (final): price_min={merged_filters.price_min}, price_max={merged_filters.price_max}, "
-                   f"category={merged_filters.category}, min_rating={merged_filters.min_rating}, "
-                   f"brand={merged_filters.brand}")
-        
-        # Warn if conflict detected
-        if merged_filters.conflict:
-            logger.warning(f"Conflicting price constraints detected in query: '{query}'")
-        
-        # 3. Generate query embedding using cleaned semantic query
-        query_embedding = self.embedding_service.generate_embedding(semantic_query)
-        
-        # 4. Vector Search
-        # We fetch more candidates than 'limit' to allow for post-filtering
-        # Rule of thumb: fetch 5x-10x the limit if heavy filtering is expected
-        candidate_multiplier = 10
-        fetch_k = limit * candidate_multiplier
-        
-        product_ids, distances = self.vector_repo.search(query_embedding, k=fetch_k)
-        
-        if not product_ids:
-            logger.info("No vector matches found")
+            # 2. Merge NLP constraints with UI filters (UI takes precedence)
+            merged_filters = self._merge_filters(nlp_constraints, filters)
+            logger.info(f"Merged filters (final): price_min={merged_filters.price_min}, price_max={merged_filters.price_max}, "
+                       f"category={merged_filters.category}, min_rating={merged_filters.min_rating}, "
+                       f"brand={merged_filters.brand}")
+            
+            # Warn if conflict detected
+            if merged_filters.conflict:
+                logger.warning(f"Conflicting price constraints detected in query: '{query}'")
+            
+            # 3. Generate query embedding using cleaned semantic query
+            query_embedding = self.embedding_service.generate_embedding(semantic_query)
+            
+            # 4. Vector Search
+            # ARCHITECTURE NOTE: We fetch more candidates than 'limit' to allow for post-filtering.
+            # This is because filters are applied AFTER vector search for performance:
+            # - Vector search is fast (FAISS index lookup)
+            # - Filtering on metadata requires DB lookups
+            # - By fetching extra candidates, we ensure enough results pass filters
+            # Rule of thumb: fetch 5x-10x the limit if heavy filtering is expected
+            candidate_multiplier = 10
+            fetch_k = limit * candidate_multiplier
+            
+            try:
+                product_ids, distances = self.vector_repo.search(query_embedding, k=fetch_k)
+                logger.info(f"Vector search found {len(product_ids)} candidates")
+            except Exception as e:
+                logger.error(f"Vector search failed: {e}")
+                return []
+            
+            if not product_ids:
+                logger.info("No vector matches found")
+                return []
+                
+            # 5. Retrieve Product Data & Apply Filters
+            # ARCHITECTURE NOTE: Filters are applied BEFORE ranking for correctness:
+            # - Ensures all returned results meet user's constraints
+            # - Prevents ranking system from promoting non-compliant products
+            # - User trust: filtered results are never shown
+            results = []
+            filtered_count = 0  # Track how many products passed filters
+            
+            # We need to process in order of similarity (which FAISS returns)
+            for pid, distance in zip(product_ids, distances):
+                # Stop if we found enough matching results
+                if len(results) >= limit:
+                    break
+                    
+                product = self.product_repo.get_product_by_id(pid)
+                if not product:
+                    continue
+                    
+                # Apply merged filters
+                if not self._passes_filters(product, merged_filters):
+                    continue
+                
+                filtered_count += 1
+                
+                # Convert L2 distance to similarity score (approximate)
+                # L2 is 0 for identical, higher for different. 
+                # Simple conversion: 1 / (1 + distance) or just 1 - distance (if normalized)
+                # For this demo, we'll use a simple transformation for display
+                similarity = 1.0 / (1.0 + distance)
+                
+                results.append(SearchResult(
+                    id=product['id'],
+                    title=product['title'],
+                    price=product['price'],
+                    rating=product['rating'],
+                    description=product['description'],
+                    category=product['category'],
+                    similarity_score=round(similarity, 4)
+                ))
+            
+            logger.info(f"After filtering: {filtered_count} products passed filters (returning top {len(results)})")
+                
+            # 6. Apply Learning-to-Rank (Re-ranking)
+            # NOTE: Ranking is applied AFTER filtering to re-order only valid results
+            if results:
+                from app.services.ranking_service import get_ranking_service
+                ranking_service = get_ranking_service()
+                results = ranking_service.apply_ranking(results)
+                
+                # 7. AI Explanation (Enrichment)
+                # NOTE: Explanations are QUALITATIVE in this version:
+                # - No hard metrics ("95% match") to avoid false precision
+                # - Focus on semantic relevance and applied signals
+                # - Future: Could integrate LLM for richer explanations
+                try:
+                    from app.ai.explanation_service import get_explanation_service
+                    explanation_service = get_explanation_service()
+                    for result in results:
+                        result.explanation = explanation_service.generate_explanation(
+                            query=query,
+                            product={'title': result.title, 'category': result.category},
+                            score=result.similarity_score
+                        )
+                except Exception as e:
+                    logger.error(f"Failed to generate explanations: {e}")
+                    # Continue without explanations rather than failing
+            
+            # Log final metrics
+            elapsed_ms = (time.perf_counter() - start_time) * 1000
+            logger.info(f"Search completed in {elapsed_ms:.2f}ms, returned {len(results)} results")
+            return results
+            
+        except Exception as e:
+            elapsed_ms = (time.perf_counter() - start_time) * 1000
+            logger.error(f"Search failed after {elapsed_ms:.2f}ms: {e}")
+            # Return empty list rather than crashing
             return []
-            
-        # 5. Retrieve Product Data & Apply Filters
-        results = []
-        
-        # We need to process in order of similarity (which FAISS returns)
-        for pid, distance in zip(product_ids, distances):
-            # Stop if we found enough matching results
-            if len(results) >= limit:
-                break
-                
-            product = self.product_repo.get_product_by_id(pid)
-            if not product:
-                continue
-                
-            # Apply merged filters
-            if not self._passes_filters(product, merged_filters):
-                continue
-            
-            # Convert L2 distance to similarity score (approximate)
-            # L2 is 0 for identical, higher for different. 
-            # Simple conversion: 1 / (1 + distance) or just 1 - distance (if normalized)
-            # For this demo, we'll use a simple transformation for display
-            similarity = 1.0 / (1.0 + distance)
-            
-            results.append(SearchResult(
-                id=product['id'],
-                title=product['title'],
-                price=product['price'],
-                rating=product['rating'],
-                description=product['description'],
-                category=product['category'],
-                similarity_score=round(similarity, 4)
-            ))
-            
-        # 6. Apply Learning-to-Rank (Re-ranking)
-        if results:
-            from app.services.ranking_service import get_ranking_service
-            ranking_service = get_ranking_service()
-            results = ranking_service.apply_ranking(results)
-            
-            # 7. AI Explanation (Enrichment)
-            # We apply this after ranking so we only explain top results
-            from app.services.explanation_orchestrator import get_explanation_orchestrator
-            orchestrator = get_explanation_orchestrator()
-            results = orchestrator.enrich_results(results, query)
-            
-        logger.info(f"Search returned {len(results)} results")
-        return results
     
     def _merge_filters(
         self, 
