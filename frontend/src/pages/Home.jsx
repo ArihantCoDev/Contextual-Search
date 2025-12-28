@@ -52,11 +52,24 @@ export default function Home() {
 
         try {
             // Map frontend filter keys to API expected keys
-            const apiFilters = {
-                category: filters.category,
-                max_price: filters.price_max ? parseFloat(filters.price_max) : null,
-                min_rating: filters.rating ? parseFloat(filters.rating) : null
-            };
+            // Only send filters that have actual values (not empty strings)
+            const apiFilters = {};
+
+            if (filters.category && filters.category.trim()) {
+                apiFilters.category = filters.category;
+            }
+
+            if (filters.price_min && filters.price_min.trim()) {
+                apiFilters.price_min = parseFloat(filters.price_min);
+            }
+
+            if (filters.price_max && filters.price_max.trim()) {
+                apiFilters.price_max = parseFloat(filters.price_max);
+            }
+
+            if (filters.rating && filters.rating.trim()) {
+                apiFilters.min_rating = parseFloat(filters.rating);
+            }
 
             const data = await searchProducts(queryToUse, apiFilters);
             const results = Array.isArray(data) ? data : (data.results || []);

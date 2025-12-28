@@ -107,10 +107,13 @@ class SearchService:
         logger.info(f"Query: '{query}'")
         logger.info(f"Semantic query: '{semantic_query}'")
         logger.info(f"NLP constraints: {nlp_constraints}")
+        logger.info(f"UI filters (raw): {filters}")
         
         # 2. Merge NLP constraints with UI filters (UI takes precedence)
         merged_filters = self._merge_filters(nlp_constraints, filters)
-        logger.info(f"Merged filters: {merged_filters}")
+        logger.info(f"Merged filters (final): price_min={merged_filters.price_min}, price_max={merged_filters.price_max}, "
+                   f"category={merged_filters.category}, min_rating={merged_filters.min_rating}, "
+                   f"brand={merged_filters.brand}")
         
         # Warn if conflict detected
         if merged_filters.conflict:
@@ -186,7 +189,7 @@ class SearchService:
     ) -> SearchFilters:
         """
         Merge NLP-extracted constraints with UI-provided filters.
-        UI filters take precedence over NLP constraints.
+        UI filters STRICTLY override NLP constraints when provided.
         
         Args:
             nlp_constraints: Constraints extracted from NLP
@@ -195,39 +198,80 @@ class SearchService:
         Returns:
             Merged SearchFilters object
         """
-        # Start with NLP constraints
+        # Helper function to check if a value is "empty" (None, empty string, or 0)
+        # These values indicate "no filter" and should NOT override NLP constraints
+        def is_empty(val):
+            if val is None:
+                return True
+            if isinstance(val, str) and val.strip() == '':
+                return True
+            if isinstance(val, (int, float)) and val == 0:
+                return True
+            return False
+        
+        # Start with NLP constraints as base
+        price_min = nlp_constraints.get('price_min')
+        price_max = nlp_constraints.get('price_max')
+        min_rating = nlp_constraints.get('rating_min')
+        category = nlp_constraints.get('category')
+        brand = nlp_constraints.get('brand')
+        color = nlp_constraints.get('color')
+        size = nlp_constraints.get('size')
+        approximate_price = nlp_constraints.get('approximate_price', False)
+        fuzzy_price = nlp_constraints.get('fuzzy_price', False)
+        conflict = nlp_constraints.get('conflict', False)
+        
+        # UI filters STRICTLY override NLP constraints ONLY if they have meaningful values
+        # Empty strings (like "All Categories") are ignored, allowing NLP to work
+        if ui_filters:
+            # Price Min: Override only if not empty
+            if not is_empty(ui_filters.price_min):
+                price_min = float(ui_filters.price_min) if ui_filters.price_min else None
+                
+            # Price Max: Check both price_max and legacy max_price
+            if not is_empty(ui_filters.price_max):
+                price_max = float(ui_filters.price_max) if ui_filters.price_max else None
+            elif not is_empty(ui_filters.max_price):
+                price_max = float(ui_filters.max_price) if ui_filters.max_price else None
+                
+            # Rating: Override only if not empty
+            if not is_empty(ui_filters.min_rating):
+                min_rating = float(ui_filters.min_rating) if ui_filters.min_rating else None
+                
+            # Category: Override only if not empty (allows "All Categories" to use NLP)
+            if not is_empty(ui_filters.category):
+                category = ui_filters.category
+                
+            # Brand: Override only if not empty
+            if not is_empty(ui_filters.brand):
+                brand = ui_filters.brand
+                
+            # Color: Override only if not empty
+            if not is_empty(ui_filters.color):
+                color = ui_filters.color
+                
+            # Size: Override only if not empty
+            if not is_empty(ui_filters.size):
+                size = ui_filters.size
+        
+        # Create merged filters
         merged = SearchFilters(
-            price_min=nlp_constraints.get('price_min'),
-            price_max=nlp_constraints.get('price_max'),
-            min_rating=nlp_constraints.get('rating_min'),
-            category=nlp_constraints.get('category'),
-            brand=nlp_constraints.get('brand'),
-            color=nlp_constraints.get('color'),
-            size=nlp_constraints.get('size'),
-            approximate_price=nlp_constraints.get('approximate_price', False),
-            fuzzy_price=nlp_constraints.get('fuzzy_price', False),
-            conflict=nlp_constraints.get('conflict', False)
+            price_min=price_min,
+            price_max=price_max,
+            min_rating=min_rating,
+            category=category,
+            brand=brand,
+            color=color,
+            size=size,
+            approximate_price=approximate_price,
+            fuzzy_price=fuzzy_price,
+            conflict=conflict
         )
         
-        # UI filters override NLP constraints
-        if ui_filters:
-            if ui_filters.price_min is not None:
-                merged.price_min = ui_filters.price_min
-            if ui_filters.price_max is not None:
-                merged.price_max = ui_filters.price_max
-            # Support legacy max_price field
-            if ui_filters.max_price is not None:
-                merged.price_max = ui_filters.max_price
-            if ui_filters.min_rating is not None:
-                merged.min_rating = ui_filters.min_rating
-            if ui_filters.category is not None:
-                merged.category = ui_filters.category
-            if ui_filters.brand is not None:
-                merged.brand = ui_filters.brand
-            if ui_filters.color is not None:
-                merged.color = ui_filters.color
-            if ui_filters.size is not None:
-                merged.size = ui_filters.size
+        # IMPORTANT: Mark if category came from NLP (for filtering logic)
+        # NLP categories are for semantic search, not strict filtering
+        merged._nlp_category = (category == nlp_constraints.get('category') and 
+                               (not ui_filters or is_empty(ui_filters.category)))
         
         return merged
 
@@ -267,7 +311,10 @@ class SearchService:
                 return False
                 
         # Category (Case-insensitive substring match)
-        if filters.category:
+        # IMPORTANT: Only filter if category came from UI, not from NLP
+        # NLP categories (like "headphones") are for semantic search, not strict filtering
+        # UI categories (like "Electronics") are actual database categories for filtering
+        if filters.category and not getattr(filters, '_nlp_category', False):
             prod_cat = product.get('category', '').lower()
             if filters.category.lower() not in prod_cat:
                 return False
