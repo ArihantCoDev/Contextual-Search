@@ -59,12 +59,20 @@ export default function Home() {
                 apiFilters.category = filters.category;
             }
 
-            if (filters.price_min && filters.price_min.trim()) {
-                apiFilters.price_min = parseFloat(filters.price_min);
+            let priceMin = filters.price_min && filters.price_min.trim() ? parseFloat(filters.price_min) : null;
+            let priceMax = filters.price_max && filters.price_max.trim() ? parseFloat(filters.price_max) : null;
+
+            // Auto-swap if min > max (for search, not UI display)
+            if (priceMin !== null && priceMax !== null && priceMin > priceMax) {
+                [priceMin, priceMax] = [priceMax, priceMin]; // Swap
             }
 
-            if (filters.price_max && filters.price_max.trim()) {
-                apiFilters.price_max = parseFloat(filters.price_max);
+            if (priceMin !== null) {
+                apiFilters.price_min = priceMin;
+            }
+
+            if (priceMax !== null) {
+                apiFilters.price_max = priceMax;
             }
 
             if (filters.rating && filters.rating.trim()) {
